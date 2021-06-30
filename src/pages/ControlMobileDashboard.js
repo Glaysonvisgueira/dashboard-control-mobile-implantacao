@@ -127,7 +127,7 @@ export function ControlMobileDashboard(){
                 </div>
 
                 
-                              <button onClick={onOpenModal} className={styles.openModalButton}>Plano de ação para implantação</button>
+                              {/* <button onClick={onOpenModal} className={styles.openModalButton}>Plano de ação para implantação</button> */}
 
                 
              </div>
@@ -165,14 +165,14 @@ export function ControlMobileDashboard(){
                       <h2 className={styles.depositoTitle}>PET - PETROLINA</h2>
                   </div>
                   <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
+                  <h1 className={styles.statusDeposito}>2%</h1>
                       <PieChart width={200} height={200}>            
                           <Pie data={fld} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
                       <h2 className={styles.depositoTitle}>FLD - FLORIANO</h2>
                   </div>
                   <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
+                  <h1 className={styles.statusDeposito}>2%</h1>
                       <PieChart width={200} height={200}>            
                           <Pie data={dpu} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
@@ -228,7 +228,7 @@ export function ControlMobileDashboard(){
              <div className={styles.containerProgressBar}>
                 
              <div className={styles.statusTitleContainer}>
-                      <h2 className={styles.statusText}>Status geral da implantação nos 12 depósitos</h2>
+                      <h2 className={styles.statusText}>Status geral da implantação nos 12 depósitos:</h2>
                 </div>
                 <div className={styles.progressBar}>
                   <div></div>
