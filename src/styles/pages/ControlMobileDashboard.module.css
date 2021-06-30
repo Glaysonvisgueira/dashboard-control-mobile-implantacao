@@ -22,6 +22,10 @@
     border-radius: 4px;
     /* border: 1px solid rgb(221, 221, 221);  */
 }
+/* 
+.containerDashboard:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+} */
 
 .containerDashboardImcompleto{
     display: flex;
@@ -41,12 +45,13 @@
 .header .titlePage span{
     color: #fff;
     padding: 2px 12px;
-    background-color: rgb(221, 181, 0);
+    background-color: rgb(24, 24, 24);
     border-radius: 4px;
 }
 
 .titlePage{
     position: absolute;
+    color: rgb(29, 29, 29);
     top: 3%;
     left: 5%;
     font-size: 35px;
@@ -87,29 +92,18 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    background-color: rgb(236, 236, 236);  
+    background-color: rgb(255, 255, 255);  
     padding: 10px;
     bottom: 0;
 }
 
 .footerStyle p{
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     margin-left: 25px;
     color: rgb(71, 71, 71);
 }
 
-.progressBar{
-    flex-direction: row;
-    margin-top: 20px;
-    width: 90%;
-    height: 130px;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 16px;
-    justify-content: space-between;
-    
-}
 
 .statusDeposito{
     position: absolute;
@@ -130,8 +124,7 @@
     width: 90%;
     justify-content: flex-start;
     align-items: flex-start;  
-    margin-top: -60px;
-    margin-bottom: 60px;
+    
 }
 
 .concluidoColor{
@@ -176,3 +169,94 @@
     font-weight: 400;
     color: rgb(138, 138, 138);
 }
+
+.containerProgressBar{
+    flex-direction: row;
+    margin-top: 20px;
+    width: 90%;
+    height: 130px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.progressBar {
+    background-color: rgb(226, 226, 226);
+    border-radius: 4px;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    width: 100%;
+    flex-direction: row;
+  }
+  
+  .progressBar div {
+    background-color: #43cc46;
+    width: 9%;
+    /* Adjust with JavaScript */
+    height: 30px;
+    border-radius: 4px;
+  }
+
+  .statusPercent{
+      font-size: 40px;
+      font-weight: 900;
+      color: #fff;
+      background-color: #43cc46;
+      border-radius: 2px;
+      padding: 2px 12px;
+      margin-top: 8px;
+  }
+
+  .statusText{
+      font-size: 28px;
+      font-weight: 900;
+      color: rgb(46, 46, 46);
+  }
+
+  .statusContainer{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  
+  .statusTitleContainer{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .openModalButton{
+    display: flex;
+    width: 300px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #43cc46;
+    border: 1px solid #43cc46;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .openModalButton:hover{
+    
+    background: #2a882c;
+  }
+
+  .openModalButton:active{
+    
+    background: #175318;
+  }
