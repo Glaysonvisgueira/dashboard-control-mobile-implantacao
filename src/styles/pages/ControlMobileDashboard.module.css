@@ -86,6 +86,8 @@
       
 }
 
+
+
 .footerStyle{
     display: flex;
     position: absolute;
@@ -256,7 +258,20 @@
     background: #2a882c;
   }
 
-  .openModalButton:active{
-    
+  .openModalButton:active{    
     background: #175318;
   }
+
+
+  .dashboardSize{
+      width: 200;
+      width: 200px;
+  }
+
+
+
+
+  @media (max-width: 1200px) {
+    
+
+    }
