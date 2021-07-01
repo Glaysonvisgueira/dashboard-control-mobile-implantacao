@@ -4,6 +4,7 @@ import './styles/global.css';
 
 import { ControlMobileDashboard } from "./pages/ControlMobileDashboard";
 import { FaseDoisDashboard } from "./pages/FaseDoisDashboard";
+import { UpdateControlMobileDashboard } from "./pages/UpdateControlMobileDashboard";
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={ControlMobileDashboard} />
           <Route path="/geral" exact component={FaseDoisDashboard} />
-          {/* <Route path="/rooms/new" component={NewRoom} />
-          <Route path="/rooms/:id" component={Room} /> */}
+          <Route path="/update-controlmobile-dashboard" exact component={UpdateControlMobileDashboard} />
+         
         </Switch>
       
   </BrowserRouter>

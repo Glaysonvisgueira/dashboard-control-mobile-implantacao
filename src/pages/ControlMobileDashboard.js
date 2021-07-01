@@ -22,12 +22,12 @@ import { PieChart, Pie } from 'recharts';
   const cdp = [
     {
       "name": "Realizado",
-      "value": 29,
+      "value": 39,
       "fill": '#43cc46'
     },
     {
       "name": "Pendente",
-      "value": 71,
+      "value": (100-39),
       "fill": '#dbdbdb'
     }
   ];
@@ -35,12 +35,12 @@ import { PieChart, Pie } from 'recharts';
   const pid = [
     {
       "name": "Realizado",
-      "value": 29,
+      "value": 39,
       "fill": '#43cc46'
     },
     {
       "name": "Pendente",
-      "value": 71,
+      "value": (100-39),
       "fill": '#dbdbdb'
     }
   ];
@@ -48,12 +48,12 @@ import { PieChart, Pie } from 'recharts';
   const pdc = [
     {
       "name": "Realizado",
-      "value": 29,
+      "value": 39,
       "fill": '#43cc46'
     },
     {
       "name": "Pendente",
-      "value": 71,
+      "value": (100-39),
       "fill": '#dbdbdb'
     }
   ];
@@ -61,12 +61,12 @@ import { PieChart, Pie } from 'recharts';
   const fld = [
     {
       "name": "Realizado",
-      "value": 2,
+      "value": 39,
       "fill": '#43cc46'
     },
     {
       "name": "Pendente",
-      "value": 98,
+      "value": (100-39),
       "fill": '#dbdbdb'
     }
   ];
@@ -74,12 +74,12 @@ import { PieChart, Pie } from 'recharts';
   const dpu = [
     {
       "name": "Realizado",
-      "value": 2,
+      "value": 39,
       "fill": '#43cc46'
     },
     {
       "name": "Pendente",
-      "value": 98,
+      "value": (100-39),
       "fill": '#dbdbdb'
     }
   ];
@@ -144,35 +144,35 @@ export function ControlMobileDashboard(){
                     <h2 className={styles.depositoTitle}>CAD - CAMPO MAIOR</h2> 
                   </div>
                   <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
+                  <h1 className={styles.statusDeposito}>39%</h1> 
                       <PieChart width={200} height={200}>            
                           <Pie data={cdp} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
                       <h2 className={styles.depositoTitle}>CDP - CAXIAS</h2>
                   </div>
                   <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
+                  <h1 className={styles.statusDeposito}>39%</h1> 
                       <PieChart width={200} height={200}>            
                           <Pie data={pid} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
                       <h2 className={styles.depositoTitle}>PID - PIRIPIRI</h2>
                   </div>
                   <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
+                  <h1 className={styles.statusDeposito}>39%</h1> 
                       <PieChart width={200} height={200}>            
                           <Pie data={pdc} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
                       <h2 className={styles.depositoTitle}>PET - PETROLINA</h2>
                   </div>
                   <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>2%</h1>
+                  <h1 className={styles.statusDeposito}>39%</h1>
                       <PieChart width={200} height={200}>            
                           <Pie data={fld} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
                       <h2 className={styles.depositoTitle}>FLD - FLORIANO</h2>
                   </div>
                   <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>2%</h1>
+                  <h1 className={styles.statusDeposito}>39%</h1>
                       <PieChart width={200} height={200}>            
                           <Pie data={dpu} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
@@ -213,7 +213,7 @@ export function ControlMobileDashboard(){
                       <PieChart width={200} height={200}>            
                           <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                       </PieChart>
-                      <h2 className={styles.depositoTitle}>FLD - FLORIANO</h2>
+                      <h2 className={styles.depositoTitle}>PDF - PEDREIRAS</h2>
                   </div>
                   <div className={styles.containerDashboard}>
                   <h1 className={styles.statusDeposito2}>0%</h1>

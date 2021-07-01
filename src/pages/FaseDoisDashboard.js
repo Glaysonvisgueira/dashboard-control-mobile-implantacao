@@ -59,12 +59,12 @@ import { PieChart, Pie } from 'recharts';
   const fld = [
     {
       "name": "Realizado",
-      "value": 2,
+      "value": 26,
       "fill": '#43cc46'
     },
     {
       "name": "Pendente",
-      "value": 98,
+      "value": (100-26),
       "fill": '#dbdbdb'
     }
   ];
@@ -72,12 +72,12 @@ import { PieChart, Pie } from 'recharts';
   const dpu = [
     {
       "name": "Realizado",
-      "value": 2,
+      "value": 33,
       "fill": '#43cc46'
     },
     {
       "name": "Pendente",
-      "value": 98,
+      "value": (100-33),
       "fill": '#dbdbdb'
     }
   ];
