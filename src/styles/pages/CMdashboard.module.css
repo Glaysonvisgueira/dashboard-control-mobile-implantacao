@@ -43,6 +43,12 @@
     font-size: 35px;
 }
 
+@media (max-width: 1280px){
+    .titlePage{        
+        font-size: 24px;
+    }
+}
+
 .header{
     display: flex;
     justify-content: center;
@@ -50,6 +56,18 @@
     flex-direction: column;
     width: 100%;
     max-width: 1280px;
+}
+
+@media (max-width: 1280px){
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+        
+    }
 }
 
 .depositoTitle{    
@@ -144,6 +162,18 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 40px;      
+}
+
+@media (max-width: 1280px){
+    .containerLegendaStatusFiltros {     
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-around;
+        margin-top: 20px;
+        align-items: flex-start;  
+
+    }
 }
 
 .legendas{
@@ -281,17 +311,31 @@
       font-size: 50px;
       font-weight: 900;
       color: #43cc46;
-      background-color: #fff;
-      border-radius: 102px;
-      padding: 2px 12px;
       margin-top: 8px;
+      z-index: 2;
   }
+
+  @media (max-width: 1280px){
+    .statusPercent{
+        font-size: 30px;
+        font-weight: 900;
+        color: #43cc46; 
+        z-index: 2;
+    }
+}
 
   .statusText{
       font-size: 28px;
       font-weight: 900;
       color: rgb(46, 46, 46);
   }
+
+  @media (max-width: 1280px){
+    .statusText{
+        font-size: 20px;
+        
+    }
+}
 
   .statusContainer{
     display: flex;
