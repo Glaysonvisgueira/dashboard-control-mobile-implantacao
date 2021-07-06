@@ -14,7 +14,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={CMdashboard} />
           <Route path="/geral" exact component={FaseDoisDashboard} />
-          <Route path="/update-controlmobile-dashboard" exact component={UpdateControlMobileDashboard} />
+          <Route path="/update/controlmobile" exact component={UpdateControlMobileDashboard} />
          
         </Switch>
       
