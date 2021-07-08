@@ -1,9 +1,9 @@
-import styles from "../styles/pages/CMdashboard.module.css";
-/* 
-import { BiFilterAlt } from "react-icons/bi"; */
+import styles from "../styles/pages/CMdashboard.module.css"; 
 
 import React, {useState, useEffect} from 'react';
 import { PieChart, Pie } from 'recharts';
+import { BiCalendar } from "react-icons/bi"; 
+import moment from "moment";
 
 import api from '../services/api.js'
 
@@ -35,10 +35,11 @@ export function CMdashboard(){
             const response = await api.get('/dashboards/controlmobile')
             setDashboards(response.data); 
             setFilterDashboards(response.data);
-            setLoading(false); 
-            
+            setLoading(false);
+            console.log(response.data)
         };        
-        loadDashboards();                
+        loadDashboards();  
+         
       }, []);
 
       if(loading){
@@ -81,8 +82,8 @@ export function CMdashboard(){
                     </div>
                 </div>
 
-                <div className={styles.filtros}>
-                    {/* <BiFilterAlt size={38} color="rgb(200, 200, 200)" className={styles.iconStyle} /> */}
+                {/* <div className={styles.filtros}>
+                    
                       <button id="TODOS" className={ filteredDashboards.length === 12 ? styles.buttonsFiltroSelected : styles.buttonsFiltro} type="button" onClick={() => {filtrarTodosDashboards()}}>
                           Todos (12)
                       </button>
@@ -101,7 +102,7 @@ export function CMdashboard(){
                     
                     
                     
-                </div>
+                </div> */}
                 
              </div>
         
@@ -113,11 +114,22 @@ export function CMdashboard(){
                 
                     {filteredDashboards.map(dashboard =>
                         <div className={styles.containerDashboard}>
-                            <h1 className={  dashboard.controlmobile.dados_dashboard[0].value === 0 ? styles.statusDepositoZero : styles.statusDeposito}>{dashboard.controlmobile.dados_dashboard[0].value}%</h1>    
+                            {/* <h3 className={styles.modalidadeText}>{dashboard.controlmobile.modalidade}</h3> */}                            
+                            <h1 className={ dashboard.controlmobile.dados_dashboard[0].value === 0 ? styles.statusDepositoZero : styles.statusDeposito}>{dashboard.controlmobile.dados_dashboard[0].value}%</h1>    
                             <PieChart width={200} height={200}>  
                                 <Pie data={dashboard.controlmobile.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                             </PieChart>
                             <h2 className={styles.depositoTitle}>{dashboard.sigla_dep} - {dashboard.cidade}</h2> 
+
+                            {dashboard.controlmobile.data_implantacao === null ? (
+                                <div></div>
+                            ) : (
+                                <div className={styles.containerDate}>
+                                    <BiCalendar size={22} color="#3d3d3d"/>
+                                    <h3 className={styles.dataImplatacao}>{moment(dashboard.controlmobile.data_implantacao).format("DD/MM/YYYY")}</h3>
+                                </div>
+                            )}
+
                         </div>                        
                         )}
 
