@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import './styles/global.css';
 
-import { ControlMobileDashboard } from "./pages/ControlMobileDashboard";
 import { CMdashboard } from "./pages/CMdashboard";
 import { FaseDoisDashboard } from "./pages/FaseDoisDashboard";
 import { UpdateControlMobileDashboard } from "./pages/UpdateControlMobileDashboard";

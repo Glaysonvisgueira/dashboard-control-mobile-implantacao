@@ -1,7 +1,9 @@
 import styles from "../styles/pages/FaseDoisDashboard.module.css";
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { PieChart, Pie } from 'recharts';
+
+import api from '../services/api.js'
 
 
   const cad = [
@@ -17,93 +19,34 @@ import { PieChart, Pie } from 'recharts';
     }
   ];
 
-  const cdp = [
-    {
-      "name": "Realizado",
-      "value": 29,
-      "fill": '#43cc46'
-    },
-    {
-      "name": "Pendente",
-      "value": 71,
-      "fill": '#dbdbdb'
-    }
-  ];
-
-  const pid = [
-    {
-      "name": "Realizado",
-      "value": 29,
-      "fill": '#43cc46'
-    },
-    {
-      "name": "Pendente",
-      "value": 71,
-      "fill": '#dbdbdb'
-    }
-  ];
-
-  const pdc = [
-    {
-      "name": "Realizado",
-      "value": 29,
-      "fill": '#43cc46'
-    },
-    {
-      "name": "Pendente",
-      "value": 71,
-      "fill": '#dbdbdb'
-    }
-  ];
-
-  const fld = [
-    {
-      "name": "Realizado",
-      "value": 26,
-      "fill": '#43cc46'
-    },
-    {
-      "name": "Pendente",
-      "value": (100-26),
-      "fill": '#dbdbdb'
-    }
-  ];
-
-  const dpu = [
-    {
-      "name": "Realizado",
-      "value": 33,
-      "fill": '#43cc46'
-    },
-    {
-      "name": "Pendente",
-      "value": (100-33),
-      "fill": '#dbdbdb'
-    }
-  ];
-
-
-  const iniciar = [
-    {
-      "name": "Realizado",
-      "value": 0,
-      "fill": '#43cc46'
-    },
-    {
-      "name": "Pendente",
-      "value": 100,
-      "fill": '#dbdbdb'
-    }
-  ];
 
 export function FaseDoisDashboard(){  
-  
-  
+
+    const [dashboards, setDashboards] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadDashboards(){      
+            const response = await api.get('/dashboards/fasedois')
+            setDashboards(response.data);             
+            setLoading(false);
+            console.log(response.data)
+        };        
+        loadDashboards();  
+         
+      }, []);
+
+      if(loading){
+        return (
+            <div className={styles.containerPage}>
+                <h1>Carregando...</h1>
+            </div>
+        )
+    }  
 
     return(
         <div className={styles.containerPage}>
 
-            
              <div className={styles.header}>
                 <h1 className={styles.titlePage}><span>DASHBOARD</span>&nbsp;&nbsp;FASE 2 DO PROJETO RECICLAGEM</h1>                
             </div>
@@ -120,17 +63,21 @@ export function FaseDoisDashboard(){
                     <span>A iníciar</span>
                     <span></span>
                 </div>
-
-                
-                             
-
-                
              </div> 
-        
-            
+                <div className={styles.wrapper}>
+                    {dashboards.map(deposito => 
+                            <div className={styles.containerDashboard}>
+                            <h1 className={deposito.dados_dashboard[0].value === 0 ? styles.statusDepositoZero : styles.statusDeposito}>{deposito.dados_dashboard[0].value}%</h1>    
+                                <PieChart width={100} height={100}>  
+                                    <Pie data={deposito.dados_dashboard} margin={ {top: 5, right: 5, bottom: 5, left: 5} } startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={38} outerRadius={45} label={false} />
+                                </PieChart>
+                            <h2 className={styles.depositoTitle}>{deposito.sigla_dep} - {deposito.cidade}</h2> 
+                            </div>
+                        )}
+                </div>
 
 
-            <div className={styles.wrapper}>
+            {/* <div className={styles.wrapper}>
                   <div className={styles.containerDashboard}>
                   <h1 className={styles.statusDeposito}>100%</h1>    
                       <PieChart width={100} height={100}>  
@@ -138,172 +85,7 @@ export function FaseDoisDashboard(){
                       </PieChart>
                     <h2 className={styles.depositoTitle}>CAD - CAMPO MAIOR</h2> 
                   </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={cdp} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>CDP - CAXIAS</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={pid} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>PID - PIRIPIRI</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={pdc} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>PET - PETROLINA</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>2%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={fld} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>FLD - FLORIANO</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>2%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={dpu} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>DPU - PRES. DUTRA</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>BDE - BALSAS</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>BDF - BARREIRAS</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>CHD - CHAPADINHA</h2>
-                  </div>
-                  
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>DSI - SANTA INÊS</h2>
-                  </div>
-                  
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>FLD - FLORIANO</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>SRD - SÃO R. NONATO</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>100%</h1>    
-                      <PieChart width={100} height={100}>  
-                          <Pie data={cad} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                    <h2 className={styles.depositoTitle}>CAD - CAMPO MAIOR</h2> 
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={cdp} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>CDP - CAXIAS</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={pid} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>PID - PIRIPIRI</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>29%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={pdc} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>PET - PETROLINA</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>2%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={fld} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>FLD - FLORIANO</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito}>2%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={dpu} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>DPU - PRES. DUTRA</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1> 
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>BDE - BALSAS</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>BDF - BARREIRAS</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>CHD - CHAPADINHA</h2>
-                  </div>
-                  
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>DSI - SANTA INÊS</h2>
-                  </div>
-                  
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>FLD - FLORIANO</h2>
-                  </div>
-                  <div className={styles.containerDashboard}>
-                  <h1 className={styles.statusDeposito2}>0%</h1>
-                      <PieChart width={100} height={100}>            
-                          <Pie data={iniciar} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={45} label={false} />
-                      </PieChart>
-                      <h2 className={styles.depositoTitle}>SRD - SÃO R. NONATO</h2>
-                  </div>
-            </div> 
+            </div>  */}
 
             
             <div className={styles.containerProgressBar}>
@@ -323,9 +105,6 @@ export function FaseDoisDashboard(){
             <footer className={styles.footerStyle}>
                 <p>Desenvolvido por: equipe de padronização de depósitos</p>
             </footer>
-
-          
-
         </div>
     )
 }

@@ -28,8 +28,6 @@ export function CMdashboard(){
     const [filteredDashboards, setFilterDashboards] = useState([]);
     const [loading, setLoading] = useState(true);
 
-
-
     useEffect(() => {
         async function loadDashboards(){      
             const response = await api.get('/dashboards/controlmobile')
@@ -121,15 +119,14 @@ export function CMdashboard(){
                             </PieChart>
                             <h2 className={styles.depositoTitle}>{dashboard.sigla_dep} - {dashboard.cidade}</h2> 
 
-                            {dashboard.controlmobile.data_implantacao === null ? (
-                                <div></div>
-                            ) : (
+                            {/* {dashboard.sigla_dep === "CAD" ? (
                                 <div className={styles.containerDate}>
-                                    <BiCalendar size={22} color="#3d3d3d"/>
-                                    <h3 className={styles.dataImplatacao}>{moment(dashboard.controlmobile.data_implantacao).format("DD/MM/YYYY")}</h3>
-                                </div>
-                            )}
-
+                                <BiCalendar size={22} color="#3d3d3d"/>
+                                <h3 className={styles.dataImplatacao}>25/06/2021</h3>
+                            </div>
+                            ) : (
+                                <div></div>
+                            )} */}
                         </div>                        
                         )}
 

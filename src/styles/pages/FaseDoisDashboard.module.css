@@ -3,7 +3,7 @@
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     background-color: #fff;
@@ -96,13 +96,7 @@
 .statusDeposito{
     position: absolute;
     color: #43cc46;
-    font-size: 24px;
-}
-
-.statusDeposito2{
-    position: absolute;
-    color: #a5a5a5;
-    font-weight: 400;
+    font-size: 18px;
 }
 
 
@@ -186,25 +180,53 @@
     background-color: #43cc46;
     width: 0%;
     /* Adjust with JavaScript */
-    height: 45px;
+    height: 20px;
     border-radius: 100px 0px 0 100px ;
   }
 
+  
+.statusDepositoZero{
+    position: absolute;
+    color: #a5a5a5;
+    font-weight: 400;
+}
+
+@media (max-width: 1280px){
+    .statusDepositoZero{
+        font-size: 18px;
+    }
+}
+
+
   .statusPercent{
-      font-size: 50px;
+      font-size: 38px;
       font-weight: 900;
-      color: rgb(226, 226, 226);
-      background-color: #fff;
-      border-radius: 102px;
-      padding: 2px 12px;
+      color: #adadad;
       margin-top: 8px;
+      z-index: 2;
   }
 
+  @media (max-width: 1280px){
+    .statusPercent{
+        font-size: 30px;
+        font-weight: 900;
+        color: #43cc46; 
+        z-index: 2;
+    }
+}
+
   .statusText{
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 900;
       color: rgb(46, 46, 46);
   }
+
+  @media (max-width: 1280px){
+    .statusText{
+        font-size: 20px;
+        
+    }
+}
 
   .statusContainer{
     display: flex;
@@ -220,32 +242,4 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 10px;
-  }
-
-  .openModalButton{
-    display: flex;
-    width: 300px;
-    height: 42px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 400;
-    overflow: hidden;
-    background: #43cc46;
-    border: 1px solid #43cc46;
-    border-radius: 4px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-
-  .openModalButton:hover{
-    
-    background: #2a882c;
-  }
-
-  .openModalButton:active{
-    
-    background: #175318;
   }
