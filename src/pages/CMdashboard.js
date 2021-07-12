@@ -145,7 +145,7 @@ export function CMdashboard(){
                 </div>
                 
                 <div className={styles.statusContainer}>
-                      <h2 className={styles.statusPercent}>8%</h2>
+                      <h2 className={styles.statusPercent}>25%</h2>
                 </div>
             </div> 
           
