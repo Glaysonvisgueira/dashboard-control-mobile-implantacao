@@ -10,14 +10,35 @@
     background-color: #fff;    
 }
 
-.sideMenu{
-    position: absolute;
+.containerLanding{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;    
 }
 
-.sideMenuHeader{
-    padding: 18px;
+
+.containerLanding h1{
+    font-size: 48px;
 }
 
-.sideMenuFooter{
-    padding: 18px;
+.landingInfo{
+    flex-direction: column;
+    padding: 30px;
+    width: 35%;
+    /* background-color: rgb(241, 241, 241);
+    border-radius: 14px; */
+    height: 200px;
+}
+
+.landingInfo p{
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.landingInfo span{
+    font-weight: 800;
+    color: rgb(221, 169, 0);
 }
