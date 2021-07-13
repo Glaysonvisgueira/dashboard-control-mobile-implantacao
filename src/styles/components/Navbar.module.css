@@ -1,6 +1,6 @@
 .containerNavbar{    
     display: flex;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 70px;
     background-color: rgb(255, 255, 255);   

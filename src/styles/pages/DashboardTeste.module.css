@@ -1,0 +1,154 @@
+.containerPage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingContainerPage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerDashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 80vh;
+    
+    border-radius: 14px;
+}
+
+.title{
+    font-weight: 900;
+    font-size: 38px;
+}
+
+
+
+.dashboard{
+    background-color: #43cc46;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0px 8px;
+}
+
+.legendas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  
+    margin: 15px;
+}
+
+.greenColor{
+    width: 30px;
+    height: 30px;
+    background-color: #43cc46;
+    border-radius: 50%;
+}
+
+
+.greyColor{
+    width: 30px;
+    height: 30px;
+    background-color: #dbdbdb;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.grid {
+    display: grid;
+    width: 90%;
+    padding: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2em;  
+    border-radius: 8px; 
+}
+
+.card{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 210px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
+}
+
+.percentConclusion{
+    position: absolute;
+    font-weight: 800;
+    font-size: 24px;
+    color: #43cc46;
+}
+
+.siglaDeposito{
+    position: absolute;
+    bottom: 5px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #3d3d3d;
+}
+
+.containerProgressBar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 90%;
+    height: 100%;
+    height: 130px;
+    border-radius: 4px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.progressBar {
+    background-color: rgb(226, 226, 226);
+    border-radius: 100px;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    width: 100%;
+    flex-direction: row;
+    margin-top: 10px;
+    
+  }
+  
+  .progressBar div {
+    background-color: #43cc46;
+    width: 25%;    
+    height: 20px;
+    border-radius: 100px 0px 0 100px ;
+  }
+
+  .textProgressBar{
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .statusPercent{
+      font-size: 28px;
+      font-weight: 900;
+      color: #43cc46;
+      margin-top: 8px;
+      z-index: 2;
+  }
+
+
+  @media (max-width: 1280px){
+    
+}
