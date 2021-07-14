@@ -12,11 +12,11 @@ export function Navbar() {
             <div className={styles.containerOptions}>
                 <div className={styles.divLink}>
                     <HiHome size={35} color="rgb(39, 39, 39)" />
-                    <Link to="/homepage" className={styles.linkText}>Home</Link>
+                    <Link to="/" className={styles.linkText}>Home</Link>
                 </div>
                 <div className={styles.divLink}>
                     <VscGraph size={35} color="rgb(39, 39, 39)" />
-                    <Link to="/teste" className={styles.linkText}>Dashboards</Link>
+                    <Link to="/dashboards" className={styles.linkText}>Dashboards</Link>
                 </div>
             </div>
         </div>

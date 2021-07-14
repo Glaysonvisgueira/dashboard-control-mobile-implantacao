@@ -3,12 +3,12 @@ import { PieChart, Pie } from 'recharts';
 
 import api from '../services/api.js'
 
-import styles from "../styles/pages/DashboardTeste.module.css";
+import styles from "../styles/pages/ControlMobileDashboard.module.css";
 
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 
-export function DashboardTeste() {
+export function ControlMobileDashboard() {
 
     const [dashboards, setDashboards] = useState([]);
     const [loading, setLoading] = useState(true);

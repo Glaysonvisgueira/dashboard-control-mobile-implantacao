@@ -35,3 +35,7 @@
     margin-left: 30px;    
 }
 
+.divLink:hover{
+    filter: brightness(-100%);
+}
+
