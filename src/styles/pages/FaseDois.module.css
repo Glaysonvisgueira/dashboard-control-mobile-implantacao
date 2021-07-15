@@ -68,10 +68,7 @@
 .grid {
     display: grid;
     width: 90%;
-    padding: 15px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 2em;  
-    border-radius: 8px; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .card{
@@ -80,7 +77,7 @@
     justify-content: center;
     align-items: center;
     width: 200px;
-    height: 210px;
+    height: 150px;
     background-color: rgb(255, 255, 255);
     border-radius: 14px;
 }
@@ -127,7 +124,7 @@
   
   .progressBar div {
     background-color: #43cc46;
-    width: 25%;    
+    width: 0%;    
     height: 20px;
     border-radius: 100px 0px 0 100px ;
   }
@@ -143,11 +140,11 @@
   .statusPercent{
       font-size: 28px;
       font-weight: 900;
-      color: #43cc46;
+      color: #686868;
       margin-top: 8px;
       z-index: 2;
   }
-
+  /* color: #43cc46; VERDE*/
 
   @media (max-width: 1280px){
     
