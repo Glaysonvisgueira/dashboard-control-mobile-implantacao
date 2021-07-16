@@ -14,8 +14,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(248, 248, 248);
     border-radius: 14px;
+    padding: 0px 14px 0 14px;
    
 }
 
@@ -28,9 +29,25 @@
 }
 
 .dados p{   
-   margin-left: 10px;
-   margin-right: 10px;    
+   margin: 5px;
+   font-size: 18px;
+   color: rgb(39, 39, 39);
+
 }
+
+
+.dadosFunc{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dadosFunc p{
+    margin: 5px;
+}
+
 
 .title{
     display: flex;
@@ -40,25 +57,30 @@
     margin-bottom: 10px;
 }
 
+.title h2{
+    font-size: 35px;
+}
+
 .containerFooter{
     display: flex;   
-    position: absolute;
-    bottom: 10px;
-    left: 15px; 
+    margin-left: 20px;
 }
 
 .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 44px;
     width: 44px;
     margin: 4px;
     border-radius: 100px;
     border: none;
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(70, 131, 133);
     cursor: pointer;
 }
 
 .button:hover{    
-    background-color: rgb(70, 131, 133);
+    background-color: rgb(46, 98, 100);
 }
 
 
@@ -74,14 +96,15 @@
 }
 
 .map{
-    flex: 6;
-    border-radius: 0 14px 14px 0px;   
+    flex: 5;
+    border-radius: 14px;   
 }
 
 .cardFuncionario{
     height: 28%;
     margin: 4px;
-    width: 100%;
+    width: 50%;
+    height: 200px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -91,9 +114,10 @@
 }
 
 .imgContainer{
-    display: flex;    
+    display: flex;   
+    width: 100%; 
     height: 100%;
-    flex: 4;
+    flex: 3;
     border-radius: 0 14px 14px 0;
     
 }
@@ -101,12 +125,58 @@
 .funcionarioDados{
     display: flex;
     flex-direction: column;
-    flex: 7.5;
+    flex: 7;
     margin-top: 25px;
 }
 
-.imgGerente{
+.depositoDados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    margin-top: 55px;
+}
+
+.imgGerente{
+        
     border-radius: 0 14px 14px 0;
 }
+
+.containerModal{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --st-modal-minWidth: 1400px;
+}
+
+.backButton{
+    width: 80px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    border: 1px solid rgb(70, 131, 133);
+    border-radius: 4px;
+    background-color: rgb(70, 131, 133);
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 5px
+}
+
+.backButton:hover{
+    background-color: rgb(46, 92, 94);
+}
+
+
