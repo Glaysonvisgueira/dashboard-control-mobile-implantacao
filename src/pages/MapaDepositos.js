@@ -122,7 +122,7 @@ export function MapaDepositos(){
           <div className={styles.containerModal}>
               <img src={organogramaImg} alt=""  style={{"width": "1000px", "height": "700px"}} />
               <div style={{"width": "100%","display": "flex", "alignItems": "center", "justifyContent": "flex-start", "margin-top": "10px"}}>
-                <span style={{"font-weight": "300", "color": "rgb(100, 100, 100)"}}>Atualizado em: 25/03/2021<br/>Status: <span style={{"background": "#43cc46", "color": "#fff", "padding": "0 4px", "border-radius": "4px"}}>VALIDADO</span></span>               
+                <span style={{"font-weight": "300", "color": "rgb(100, 100, 100)"}}>Atualizado em: 25/03/2021</span>               
               </div>
           </div>
         );
@@ -249,7 +249,7 @@ export function MapaDepositos(){
                                 className={styles.map}
                                 center={[-6.8965231, -42.1914786]}
                                 zoom={5.5}
-                                style={{width: '50%', height: '80%'}}
+                                style={{width: '50%', height: '100%'}}
                                 scrollWheelZoom={true}
                             >
                             <TileLayer 

@@ -37,19 +37,19 @@ export function Navbar() {
                     </div>
                 </Link>
 
-                {/* <Link to="/mapa/depositos" className={styles.linkText}>
+                <Link to="/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
                         <FaMapMarkedAlt size={35} color="rgb(39, 39, 39)" />
-                        <span>Mapa</span>
+                        <span>Mapa (Depósitos)</span>
                     </div>
                 </Link>
-
+{/* 
                 <Link to="/mapa/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
                         <FiInfo size={35} color="rgb(39, 39, 39)" />
                         <span>Sobre</span>
                     </div>   
-                </Link> */}
+                </Link>  */}
 
 
             </div>

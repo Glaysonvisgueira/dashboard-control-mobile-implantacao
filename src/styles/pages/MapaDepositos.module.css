@@ -16,8 +16,6 @@
     align-items: center;
     background-color: rgb(248, 248, 248);
     border-radius: 14px;
-    padding: 0px 14px 0 14px;
-   
 }
 
 .dados{
@@ -97,7 +95,8 @@
 
 .map{
     flex: 5;
-    border-radius: 14px;   
+    border-radius: 0 14px 14px 0;   
+    
 }
 
 .cardFuncionario{
@@ -172,7 +171,7 @@
     cursor: pointer;
     position: absolute;
     bottom: 20px;
-    left: 5px
+    left: 15px
 }
 
 .backButton:hover{

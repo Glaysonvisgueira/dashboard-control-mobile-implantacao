@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage";
 import { DashboardList } from "./pages/DashboardList";
 import { ControlMobileDashboard } from "./pages/ControlMobileDashboard";
 import { MapaDepositos } from "./pages/MapaDepositos";
+import { ListaDepositos } from "./pages/ListaDepositos";
 import { FaseDoisDashboard } from "./pages/FaseDoisDashboard";
 
 import { FaseDois } from "./pages/FaseDois";
@@ -16,6 +17,7 @@ function App() {
     <BrowserRouter>     
         <Switch>          
           <Route path="/" exact component={HomePage} /> 
+          <Route path="/depositos" exact component={ListaDepositos} /> 
           <Route path="/mapa/depositos" exact component={MapaDepositos} />         
           <Route path="/dashboards" exact component={DashboardList} />
           <Route path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />

@@ -1,0 +1,71 @@
+.containerPage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerDepositos{    
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.grid{
+    display: grid;    
+    width: 60%;
+    height: 400px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;  
+}
+
+.card{
+    margin: auto;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 14px;
+    cursor: pointer;
+   
+}
+
+.card:hover{    
+    border: 2px solid rgb(112, 112, 112);
+}
+
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+   
+    position: absolute;
+    left: 45px;
+    top: 100px;    
+}
+
+.title{ 
+    font-size: 34px;
+    color: #141414;
+    width: 100%;
+}
+
+.titleAndIcon{
+    display: flex;
+    flex-direction: row;
+}
+
+.titleContainer span{
+    color: rgb(148, 148, 148);
+    font-size: 18px;
+    margin-left: 45px;
+}
