@@ -21,10 +21,7 @@ export function HomePage(){
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      };
-
-      
-    
+      };     
     
     return(
         <>

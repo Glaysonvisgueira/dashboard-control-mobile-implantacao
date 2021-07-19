@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import './styles/global.css';
 
+import { Login } from "./pages/Login";
 import { HomePage } from "./pages/HomePage";
 import { DashboardList } from "./pages/DashboardList";
 import { ControlMobileDashboard } from "./pages/ControlMobileDashboard";
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>     
         <Switch>          
           <Route path="/" exact component={HomePage} /> 
+          <Route path="/login" exact component={Login} /> 
           <Route path="/depositos" exact component={ListaDepositos} /> 
           <Route path="/mapa/depositos" exact component={MapaDepositos} />         
           <Route path="/dashboards" exact component={DashboardList} />

@@ -18,38 +18,38 @@ export function Navbar() {
                 
                 <Link to="/" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <HiHome size={35} color="rgb(39, 39, 39)" />
+                        <HiHome size={35} color="#fff" />
                         <span>Home</span>
                     </div>
                 </Link>
 
-                <Link to="/mapa/depositos" className={styles.linkText}>
+                <Link to="/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <FaWarehouse size={35} color="rgb(39, 39, 39)" />
+                        <FaWarehouse size={35} color="#fff" />
                         <span>Depósitos</span>
                     </div>
                 </Link>  
 
                 <Link to="/dashboards" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <VscGraph size={35} color="rgb(39, 39, 39)" />
+                        <VscGraph size={35} color="#fff" />
                        <span>Dashboards</span>
                     </div>
                 </Link>
 
-                <Link to="/depositos" className={styles.linkText}>
-                    <div className={styles.divLink}>
-                        <FaMapMarkedAlt size={35} color="rgb(39, 39, 39)" />
-                        <span>Mapa (Depósitos)</span>
-                    </div>
-                </Link>
-{/* 
                 <Link to="/mapa/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <FiInfo size={35} color="rgb(39, 39, 39)" />
+                        <FaMapMarkedAlt size={35} color="#fff" />
+                        <span>Mapa</span>
+                    </div>
+                </Link>
+
+               {/*  <Link to="/login" className={styles.linkText}>
+                    <div className={styles.divLink}>
+                        <FiInfo size={35} color="#fff" />
                         <span>Sobre</span>
                     </div>   
-                </Link>  */}
+                </Link>   */}
 
 
             </div>
