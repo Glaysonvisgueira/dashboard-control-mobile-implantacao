@@ -15,6 +15,15 @@ import investigationImg from '../assets/investigation.png'
 import teachImg from '../assets/teach.png'
 import inspectImg from '../assets/inspect.png'
 
+import eticaImg from '../assets/etica.png'
+import simplicidadeImg from '../assets/simplicidade.png'
+import diversidadeImg from '../assets/diversidade.png'
+import justicaImg from '../assets/justica.png'
+import inovacaoImg from '../assets/inovacao.png'
+import parceriaImg from '../assets/parceria.png'
+import perseverancaImg from '../assets/perseveranca.png'
+import dedicacaoImg from '../assets/dedicacao.png'
+
 import visaoImg from '../assets/visao.jpg'
 
 import {Navbar} from '../components/Navbar';
@@ -61,36 +70,11 @@ export function HomePage(){
                 <IoArrowDownCircleOutline size={70} color="rgb(70, 131, 133)" style={{"position": "absolute", "bottom": "40px"}}/>                                         
             </div>
             {/* <Footer />   */}
-            <section className={styles.sectionUm}> 
-                          
-                <div className={styles.row}>
-                    <div className={styles.cardObjetivo}>
-                        <GiTeacher size={150} color="rgb(255, 255, 255)"/>   
-                        <h3>IMPLANTAR</h3>
-                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.cardObjetivo}>
-                        <FaBalanceScale size={150} color="rgb(255, 255, 255)"/>   
-                        <h3>PADRONIZAR</h3>
-                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.cardObjetivo}>
-                        <RiRecycleFill size={150} color="rgb(255, 255, 255)"/>   
-                        <h3>RECICLAR</h3>
-                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
-                        </div>
-                    </div>
-                </div>                
+            <section className={styles.sectionTres}>
+                <h1>Equipe</h1>
             </section>
             <section className={styles.sectionDois}>
-
+                <h3>O projeto foi dividido em três fases, sendo elas:</h3>
                 <div className={styles.cardFase}>
                     <div className={styles.numberFase}>
                             <h1>1</h1>
@@ -133,9 +117,37 @@ export function HomePage(){
                 </div>
 
             </section>
-            <section className={styles.sectionTres}>
-                <h1>Equipe</h1>
+
+            <section className={styles.sectionUm}> 
+            
+                <div className={styles.row}>
+                    <div className={styles.cardObjetivo}>
+                        <GiTeacher size={150} color="rgb(255, 255, 255)"/>   
+                        <h3>IMPLANTAR</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardObjetivo}>
+                        <FaBalanceScale size={150} color="rgb(255, 255, 255)"/>   
+                        <h3>PADRONIZAR</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardObjetivo}>
+                        <RiRecycleFill size={150} color="rgb(255, 255, 255)"/>   
+                        <h3>RECICLAR</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>
+                    </div>
+                </div>                
             </section>
+
+            
             
             <section className={styles.sectionQuatro}>
                 <div className={styles.missaoContainer}>
@@ -144,13 +156,15 @@ export function HomePage(){
                     </div>
                     <div className={styles.missaoText}>
                     <h1>MISSÃO</h1>
-                    <p style={{"width":"30%"}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.ndustry. Lorem Ipsu Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                    <p style={{"width":"40%", "textAlign": "center"}}>Trabalhar com responsabilidade nos negócios, qualidade em produção
+                            e serviços e compromisso com colaboradores e comunidades.</p>
                     </div>
                 </div>
                 <div className={styles.visaoContainer}>
                     <div className={styles.visaoText}>
                             <h1>VISÃO</h1>
-                            <p style={{"width":"30%"}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.ndustry. Lorem Ipsu Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                            <p style={{"width":"40%", "textAlign": "center"}}>Criação de relações sólidas, buscando o respeito e a satisfação,
+                                        junto a colaboradores, clientes, fornecedores e parceiros comerciais.</p>
                     </div>
                     <div style={{"height":"100%","width":"40%", "background-color": "#fff"}}>
                         <img src={visaoImg} alt="Visão" style={{"width":"100%", "height": "100%"}}/>
@@ -160,7 +174,86 @@ export function HomePage(){
             </section>
 
             <section className={styles.sectionCinco}>
-                <h1>Valores</h1>
+            <h1>VALORES</h1>
+                <div className={styles.grid}>
+                    
+                    <div className={styles.cardValores}>
+                        
+                        <img src={eticaImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>ÉTICA</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>
+
+                    <div className={styles.cardValores}>
+                    
+                        <img src={simplicidadeImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>SIMPLICIDADE</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>
+
+                    <div className={styles.cardValores}>
+                    
+                        <img src={diversidadeImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>RESPEITO</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>                   
+
+                    <div className={styles.cardValores}>
+                   
+                        <img src={justicaImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>JUSTIÇA</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>
+
+                    <div className={styles.cardValores}>
+                   
+                        <img src={inovacaoImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>INOVAÇÃO</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>
+
+                    <div className={styles.cardValores}>
+                    
+                        <img src={parceriaImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>PARCERIA</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>
+
+                    <div className={styles.cardValores}>
+                    
+                        <img src={perseverancaImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>PERSERVERANÇA</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>
+
+                    <div className={styles.cardValores}>
+                   
+                        <img src={dedicacaoImg} alt="Inspecionar" style={{"width":"100px", "height": "100px"}}/>
+                        <h3>DEDICAÇÃO</h3>
+                        <div style={{"display":"flex","width": "100%", "flexDirection":"column",}}>                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                        </div>      
+                    </div>
+
+                </div>
+            </section>
+            <section className={styles.sectionSeis}> 
+                          
+                             
             </section>
         </>
     )

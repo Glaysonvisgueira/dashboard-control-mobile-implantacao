@@ -26,12 +26,19 @@
 }
 
 .landingInfo{
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 30px;
     width: 35%;
     /* background-color: rgb(241, 241, 241);
     border-radius: 14px; */
     height: 200px;
+}
+
+.landingInfo h1{
+    color:rgb(71, 131, 133);
+    font-size: 58px;
 }
 
 .landingInfo p{
@@ -62,7 +69,7 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     background-color: #8acccf;
 }
 
@@ -73,6 +80,14 @@
     width: 100%;
     height: 100vh;
     flex-direction: column;
+}
+
+.sectionDois h3{
+    width: 70%;
+    align-items: flex-start;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: rgb(71, 131, 133);
 }
 
 .sectionTres{
@@ -101,6 +116,17 @@
     align-items: center;
     width: 100%;
     height: 100vh;
+    background-color: #fff;
+}
+
+
+.sectionSeis{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
     background-color: #8acccf;
 }
 
@@ -136,10 +162,10 @@
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    height: 28%;
+    height: 20%;
     background-color: #8acccf;
     border-radius: 300px;
-    margin: 20px;
+    margin: 10px;
     word-wrap: break-word;   
 }
 
@@ -149,15 +175,15 @@
     justify-content: center;
     align-items: center;
     width: 20%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
+    height: 80%;
+    background-color: #8acccf;
     border-radius: 50%;
     border: 4px solid #8acccf;
 }
 
 .numberFase h1{
-    font-size: 140px;
-    color: #8acccf;
+    font-size: 120px;
+    color: #ffffff;
 }
 
 .cardFase span{
@@ -167,7 +193,7 @@
 
 .cardFase p{
     font-size: 30px;
-    color: #8acccf;
+    color: #ffffff;
     margin-top: -30px;
 }
 
@@ -175,7 +201,7 @@
 .missaoContainer{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
     background-color: rgb(255, 255, 255);
     width: 100%;
@@ -209,11 +235,21 @@
     font-weight: 800;
 }
 
+.missaoText p {
+    font-size: 16px;
+    color: rgb(110, 110, 110);
+}
+
 .visaoText h1{
     
     font-size: 70px;
     color: rgb(71, 131, 133);
     font-weight: 800;
+}
+
+.visaoText p {
+    font-size: 16px;
+    color: rgb(110, 110, 110);
 }
 
 .visaoContainer{
@@ -224,5 +260,65 @@
     background-color: rgb(255, 255, 255);
     width: 100%;
     height: 50%;
+}
+
+.grid{
+    display: grid; 
+    margin: auto;   
+    width: 80%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;      
+    padding: 40px;
+}
+
+.cardValores{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    margin: auto;
+    padding: 30px;
+    text-align: justify;    
+}
+
+
+.cardValores h3{
+    font-size: 28px;
+    font-weight: 300;
+    color: rgb(71, 131, 133);
+}
+
+.cardValores p{
+    font-weight: 300;
+    color: rgb(71, 131, 133);
+}
+
+.cardValores span{
+    position: absolute;
+    padding: 6px 14px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    background-color: #8acccf;
+    color: #fff;
+    font-weight: 800;
+    font-size: 30px;
+
+}
+
+
+.sectionCinco h1{
+   
+    margin-top: 10px;
+    font-size: 70px;
+    color: rgb(71, 131, 133);
+    font-weight: 800;
+    z-index: 2;
 }
 

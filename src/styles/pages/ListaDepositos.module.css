@@ -58,11 +58,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-   
+    justify-content: center;   
     position: absolute;
     left: 45px;
-    top: 100px;    
+    top: 15px
+    
 }
 
 .title{ 
