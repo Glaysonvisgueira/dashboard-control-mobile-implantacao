@@ -15,6 +15,8 @@ import investigationImg from '../assets/investigation.png'
 import teachImg from '../assets/teach.png'
 import inspectImg from '../assets/inspect.png'
 
+import visaoImg from '../assets/visao.jpg'
+
 import {Navbar} from '../components/Navbar';
 import {Footer} from '../components/Footer';
 
@@ -134,8 +136,31 @@ export function HomePage(){
             <section className={styles.sectionTres}>
                 <h1>Equipe</h1>
             </section>
+            
             <section className={styles.sectionQuatro}>
-                <h1>Missão visão e valores</h1>
+                <div className={styles.missaoContainer}>
+                    <div style={{"height":"100%","width":"40%", "background-color": "#fff"}}>
+                        <img src={visaoImg} alt="Visão" style={{"width":"100%", "height": "100%"}}/>
+                    </div>
+                    <div className={styles.missaoText}>
+                    <h1>MISSÃO</h1>
+                    <p style={{"width":"30%"}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.ndustry. Lorem Ipsu Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                    </div>
+                </div>
+                <div className={styles.visaoContainer}>
+                    <div className={styles.visaoText}>
+                            <h1>VISÃO</h1>
+                            <p style={{"width":"30%"}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.ndustry. Lorem Ipsu Lorem Ipsum has been the industry's standarm Ipsum.</p>
+                    </div>
+                    <div style={{"height":"100%","width":"40%", "background-color": "#fff"}}>
+                        <img src={visaoImg} alt="Visão" style={{"width":"100%", "height": "100%"}}/>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section className={styles.sectionCinco}>
+                <h1>Valores</h1>
             </section>
         </>
     )
