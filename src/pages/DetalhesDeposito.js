@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
-import {MapContainer, TileLayer } from "react-leaflet";
+import React, {useState, useEffect} from 'react';
+import {MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Tooltip from "react-simple-tooltip";
 import { CustomDialog, useDialog } from 'react-st-modal';
+import { useHistory } from "react-router-dom";
+import api from "../services/api.js";
  
 import { BsCardList, BsPeopleFill, BsImages } from "react-icons/bs";
 import { BiCodeBlock } from "react-icons/bi";
@@ -9,7 +11,7 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 import { FaNetworkWired, FaTools } from "react-icons/fa";
 import { IoArrowBack } from "react-icons/io5";
      
-import styles from "../styles/pages/MapaDepositos.module.css"; 
+import styles from "../styles/pages/DetalhesDeposito.module.css"; 
 
 import {Navbar} from '../components/Navbar';
 import {Footer} from '../components/Footer';
@@ -17,9 +19,37 @@ import {Footer} from '../components/Footer';
 import gerenteImg from "../assets/gerente.jpg";
 import organogramaImg from '../assets/organograma.PNG'
 
-export function MapaDepositos(){ 
+export function DetalhesDeposito(){ 
 
-    function ShowLiderancas(){
+    const history = useHistory();
+
+    const [deposito, setDeposito] = useState([]);
+
+    useEffect(() => {
+        async function getDadosDeposito() {
+          const sigla_deposito = await localStorage.getItem(
+            "@projetoreciclagem:sigla_deposito"
+          );
+          console.log(sigla_deposito);
+          const response = await api.get(`/depositos/${sigla_deposito}`);
+          setDeposito(response.data);
+        }
+        getDadosDeposito();
+      }, []);
+    
+      if (!deposito.dados_geograficos) {
+        return (
+          <>
+             <>
+                    <Navbar />
+                    
+                    <Footer />
+                </>
+          </>
+        );
+      }
+
+      function ShowLiderancas(){
 
         const dialog = useDialog();      
         const [value, setValue] = useState();
@@ -128,6 +158,62 @@ export function MapaDepositos(){
         );
       }
 
+      function ShowEquipamentos(){
+
+        const dialog = useDialog();      
+        const [value, setValue] = useState();
+      
+        return (
+          <div className={styles.containerModal}>
+              <div className={styles.containerModal}>
+                    <span>a</span>
+              </div>
+          </div>
+        );
+      }
+
+      function ShowFotosDeposito(){
+
+        const dialog = useDialog();      
+        const [value, setValue] = useState();
+      
+        return (
+          <div className={styles.containerModal}>
+              <div className={styles.containerModal}>
+                    <span>Fotos</span>
+              </div>
+          </div>
+        );
+      }
+
+      function ShowSeguranca(){
+
+        const dialog = useDialog();      
+        const [value, setValue] = useState();
+      
+        return (
+          <div className={styles.containerModal}>
+              <div className={styles.containerModal}>
+                    <span>Segurança</span>
+              </div>
+          </div>
+        );
+      }
+
+      function ShowSistemasImplantados(){
+
+        const dialog = useDialog();      
+        const [value, setValue] = useState();
+      
+        return (
+          <div className={styles.containerModal}>
+              <div className={styles.containerModal}>
+                    <span>Sistemas</span>
+              </div>
+          </div>
+        );
+      }
+
     return(
         <>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -163,25 +249,45 @@ export function MapaDepositos(){
                                     <button type="button" className={styles.button} onClick={async () => {
                                             const result = await CustomDialog(<ShowOrganograma className={styles.modalCustom}/>, {
                                                 title: 'Organograma do depósito',
-                                                showCloseIcon: true,
-                                                className: styles.modalCustom
-                                                
-                                                
+                                                showCloseIcon: true,                                                
                                             });
                                         }}><FaNetworkWired size={28} color="#fff" /></button>
                                     </Tooltip>
                                     
                                     <Tooltip content="Equipamentos e ferramentas">
-                                    <button type="button" className={styles.button}><FaTools size={28} color="#fff" /></button>
+                                        <button type="button" className={styles.button} onClick={async () => {
+                                            const result = await CustomDialog(<ShowEquipamentos className={styles.modalCustom}/>, {
+                                                title: 'Equipamentos e ferramentas',
+                                                showCloseIcon: true,                                                
+                                            });
+                                        }}><FaTools size={28} color="#fff" /></button>
                                     </Tooltip>
+
                                     <Tooltip content="Fotos">
-                                    <button type="button" className={styles.button}><BsImages size={28} color="#fff" /></button>             
+                                        <button type="button" className={styles.button} onClick={async () => {
+                                            const result = await CustomDialog(<ShowFotosDeposito className={styles.modalCustom}/>, {
+                                                title: 'Fotos do depósito',
+                                                showCloseIcon: true,                                                
+                                            });
+                                        }}><BsImages size={28} color="#fff" /></button>             
                                     </Tooltip>
+
                                     <Tooltip content="Segurança">
-                                    <button type="button" className={styles.button}><AiFillSafetyCertificate size={28} color="#fff" /></button>
+                                        <button type="button" className={styles.button} onClick={async () => {
+                                            const result = await CustomDialog(<ShowSeguranca className={styles.modalCustom}/>, {
+                                                title: 'Mecanismos de segurança',
+                                                showCloseIcon: true,                                                
+                                            });
+                                        }}> <AiFillSafetyCertificate size={28} color="#fff" /></button>
                                     </Tooltip>
+
                                     <Tooltip content="Sistemas">
-                                    <button type="button" className={styles.button}><BiCodeBlock size={28} color="#fff" /></button>             
+                                        <button type="button" className={styles.button} onClick={async () => {
+                                            const result = await CustomDialog(<ShowSistemasImplantados className={styles.modalCustom}/>, {
+                                                title: 'Sistemas implantados',
+                                                showCloseIcon: true,                                                
+                                            });
+                                        }}><BiCodeBlock size={28} color="#fff" /></button>             
                                     </Tooltip>              
                             </div>
                             </div>
@@ -190,50 +296,66 @@ export function MapaDepositos(){
 
                                     <div className={styles.dados}>                                
                                         <p>Perfil</p>
-                                        <p>Grande</p>                                
+                                        <p>{deposito.perfil}</p>                                
                                      </div>
                                     <div className={styles.dados}>                                
                                         <p>Sigla do depósito</p>
-                                        <p>TDC</p>                                
+                                        <p>{deposito.sigla_dep}</p>                                
                                      </div>
                                      <div className={styles.dados}>                                
                                         <p>Sigla da loja mãe</p>
-                                        <p>TDC</p>                                
+                                        <p>{deposito.sigla_loja_mae}</p>                                
                                      </div>
                                      <div className={styles.dados}>                                
                                         <p>Cidade - UF </p>
-                                        <p>Teresina - PI</p>                                
+                                        <p>{deposito.dados_geograficos.cidade} - {deposito.dados_geograficos.uf}</p>                                
                                      </div>
                                      <div className={styles.dados}>                                
                                         <p>Quantidade de funcionários</p>
-                                        <p>163</p>                                
+                                        <p>{deposito.qtd_funcionarios}</p>                                
                                      </div>
                                      <div className={styles.dados}>                                
                                         <p>Fecha para almoço?</p>
-                                        <p>Não</p>                                
+                                        {deposito.fecha_almoco === true ? (
+                                            <span className={styles.simBadge}>SIM</span>
+                                        ) : (
+                                            <span className={styles.naoBadge}>NÃO</span>
+                                        )}                                                                      
                                      </div>
                                      <div className={styles.dados}>                                
                                         <p>Cliente retira?</p>
-                                        <p>Sim</p>                                
+                                        {deposito.cliente_retira === true ? (
+                                            <span className={styles.simBadge}>SIM</span>
+                                        ) : (
+                                            <span className={styles.naoBadge}>NÃO</span>
+                                        )}                                
                                      </div>
                                      <div className={styles.dados}>                                
                                         <p>Anexo à loja mãe?</p>
-                                        <p>Não</p>                                
-                                     </div>
-                                     <div className={styles.dados}>                                
-                                        <p>Fecha para almoço?</p>
-                                        <p>Não</p>                                
-                                     </div>
+                                        {deposito.anexo_loja === true ? (
+                                            <span className={styles.simBadge}>SIM</span>
+                                        ) : (
+                                            <span className={styles.naoBadge}>NÃO</span>
+                                        )}                                
+                                     </div>                                    
                                      <div className={styles.dados}>                                
                                         <p>Postos</p>
-                                        <p>ZZZ, ZZZ, ZZZ, ZZZ</p>                                
+                                        <div>
+                                            {deposito.pdvs.sigla_posto.map((posto) => (
+                                                <span className={styles.siglaAbastecido}>{posto}</span>
+                                                ))}  
+                                        </div>                              
                                      </div>
                                      <div className={styles.dados}>                                
                                         <p>Representantes</p>
-                                        <p>ZZZ, ZZZ</p>                                
+                                        <div>
+                                            {deposito.pdvs.sigla_rep.map((rep) => (
+                                                <span className={styles.siglaAbastecido}>{rep}</span>
+                                                ))}    
+                                        </div>                            
                                      </div>
                             </div>
-                            <button type="button" className={styles.backButton}><IoArrowBack size={28} color="#fff" /></button>
+                            <button type="button" onClick={history.goBack} className={styles.backButton}><IoArrowBack size={28} color="#fff" /></button>
 
                           
                             
@@ -247,7 +369,10 @@ export function MapaDepositos(){
                     
                         <MapContainer 
                                 className={styles.map}
-                                center={[-6.8965231, -42.1914786]}
+                                center={[
+                                    `${deposito.dados_geograficos.location.latitude}`,
+                                    `${deposito.dados_geograficos.location.longitude}`,
+                                ]}
                                 zoom={5.5}
                                 style={{width: '50%', height: '100%'}}
                                 scrollWheelZoom={true}
@@ -256,6 +381,17 @@ export function MapaDepositos(){
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
+                            <Marker
+                                position={[
+                                `${deposito.dados_geograficos.location.latitude}`,
+                                `${deposito.dados_geograficos.location.longitude}`,
+                                ]}
+                            >
+                                <Popup>
+                                    <span>Aqui está o depósito de {deposito.sigla_dep}!</span>
+                                </Popup>
+                                
+                            </Marker>
                             
                         </MapContainer>
 

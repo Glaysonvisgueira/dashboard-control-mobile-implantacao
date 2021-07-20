@@ -6,6 +6,7 @@ import api from '../services/api.js'
 import styles from "../styles/pages/FaseDois.module.css";
 
 import { Navbar } from '../components/Navbar';
+import { Loading } from '../components/Loading';
 import { Footer } from '../components/Footer';
 
 export function FaseDois() {
@@ -24,13 +25,13 @@ export function FaseDois() {
 
     }, []);
 
-    if (loading) {
+    if(loading){
         return (
-            <div className={styles.loadingContainerPage}>
+            <>
                 <Navbar />
-                    <h1>Carregando dados...</h1>
+                <Loading />
                 <Footer />
-            </div>
+            </>
         )
     }
     
