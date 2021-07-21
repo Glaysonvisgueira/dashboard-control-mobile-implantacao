@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import api from '../services/api.js'
 
 import { BiListUl } from "react-icons/bi";
-import { VscNote } from "react-icons/vsc";
 
 import styles from "../styles/pages/ListaDepositos.module.css"; 
 
@@ -72,7 +71,7 @@ export function ListaDepositos(){
                                         <Link to={`/depositos/${deposito.sigla_dep.toLowerCase()}`} className={styles.linkDep}
                                                     onClick={() => {handleClickDeposito(deposito.sigla_dep)}} >
                                                  <div className={styles.card}>
-                                                    <VscNote size={24} color="#fff" className={styles.iconPlus}/>
+                                                    
                                                     <span className={styles.textDeposito}>{deposito.sigla_dep}</span>
                                                     <span className={styles.cidade}>{deposito.dados_geograficos.cidade} - {deposito.dados_geograficos.uf}</span>
                                                  </div> 

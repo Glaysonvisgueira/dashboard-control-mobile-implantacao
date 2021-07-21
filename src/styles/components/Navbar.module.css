@@ -24,8 +24,10 @@
     text-decoration: none !important;
     color: rgb(255, 255, 255); 
     font-size: 16px;
-    font-weight: 300; 
-    text-decoration: none;     
+    letter-spacing: 2px;
+    font-weight: 800; 
+    text-decoration: none;  
+   
   }
 
 .divLink{
@@ -34,10 +36,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: 30px;    
+    margin-left: 30px;   
+    
 }
 
 .divLink:hover{
-    filter: brightness(-100%);
+    filter: brightness(-10%);
 }
 

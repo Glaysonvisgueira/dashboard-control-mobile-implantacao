@@ -9295,12 +9295,10 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
-react-full-page@^0.1.11:
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/react-full-page/-/react-full-page-0.1.11.tgz#1b74fc4d746fb9de4b1a2b026084a82a1858dbd2"
-  integrity sha512-8pSXt2Ik799DWtXqS4746T+OnHEFadOF5gNQ10as6CIwgpGwaMAV0NJ7ItXUfEYAX1E/ky0A/mjeWfvjjldfHQ==
-  dependencies:
-    core-js "^3.6.5"
+react-fade-in@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-fade-in/-/react-fade-in-2.0.1.tgz#b4bcd7dac63d6857ebcd68facbff2f5f9616278f"
+  integrity sha512-oqS/WT4znaXEHmL+yo0IDUDY7uC9K4RP35j1SdRUEBspR09B2iIC0i8oJ28tPOr6Ez/L2aktF9p89j+DbsTVNw==
 
 react-icons@^4.2.0:
   version "4.2.0"

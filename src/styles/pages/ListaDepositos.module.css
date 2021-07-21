@@ -19,9 +19,9 @@
 
 .grid{
     display: grid;    
-    width: 60%;
-    height: 400px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 90%;
+    height: 500px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 20px;  
 }
 
@@ -32,12 +32,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 90px;
-    background-color: #8acccf;
+    width: 200px;
+    height: 140px;
+    background-color: #f1f1f1;
     border-radius: 4px;
     cursor: pointer;
-    color: rgb(255, 255, 255);  
+    color: rgb(112, 112, 112);  
     border: 3px solid transparent;   
     text-align: center;
 }
@@ -53,8 +53,8 @@
 
 .card:hover{    
     border: 3px solid rgb(70, 131, 133);
-    background-color: rgb(70, 131, 133);   
-    
+    background-color: rgb(70, 131, 133);
+    color: rgb(255, 255, 255);
 }
 
 .cidade{
