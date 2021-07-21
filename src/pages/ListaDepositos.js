@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import api from '../services/api.js'
+
 import { BiListUl } from "react-icons/bi";
+import { VscNote } from "react-icons/vsc";
 
 import styles from "../styles/pages/ListaDepositos.module.css"; 
 
@@ -22,7 +24,7 @@ export function ListaDepositos(){
             setLoading(false); 
         };        
         loadDepositos();  
-        console.log(depositos);
+        //console.log(depositos);
       }, []);
 
       async function handleClickDeposito(sigla_dep){
@@ -33,8 +35,19 @@ export function ListaDepositos(){
         return (
             <>
                 <Navbar />
-                <Loading />
-                <Footer />
+                    <div className={styles.containerPage}>
+                        
+                        <div className={styles.titleContainer}>
+                                <div className={styles.titleAndIcon}>
+                                <BiListUl size={34} color="#468385"/>
+                                <h1 className={styles.title}>&nbsp;Detalhes sobre o depósito</h1>
+                                </div>
+                                <span>Escolha um depósito para acessar suas informações.</span>
+                            </div>
+                    
+                            <Loading />
+                    </div>
+            <Footer />  
             </>
         )
     }
@@ -43,13 +56,14 @@ export function ListaDepositos(){
         <>
             <Navbar />
                 <div className={styles.containerPage}>
-                <div className={styles.titleContainer}>
-                        <div className={styles.titleAndIcon}>
-                        <BiListUl size={45} color="#141414"/>
-                        <h1 className={styles.title}>&nbsp;Lista de depósitos</h1>
+                    
+                    <div className={styles.titleContainer}>
+                            <div className={styles.titleAndIcon}>
+                            <BiListUl size={34} color="#468385"/>
+                            <h1 className={styles.title}>&nbsp;Detalhes sobre o depósito</h1>
+                            </div>
+                            <span>Escolha um depósito para acessar suas informações.</span>
                         </div>
-                        <span>Escolha um dos depósitos para acessar suas informações.</span>
-                    </div>
                    
                         <div className={styles.grid}>
                            
@@ -58,7 +72,9 @@ export function ListaDepositos(){
                                         <Link to={`/depositos/${deposito.sigla_dep.toLowerCase()}`} className={styles.linkDep}
                                                     onClick={() => {handleClickDeposito(deposito.sigla_dep)}} >
                                                  <div className={styles.card}>
+                                                    <VscNote size={24} color="#fff" className={styles.iconPlus}/>
                                                     <span className={styles.textDeposito}>{deposito.sigla_dep}</span>
+                                                    <span className={styles.cidade}>{deposito.dados_geograficos.cidade} - {deposito.dados_geograficos.uf}</span>
                                                  </div> 
                                         </Link>
                                     )}

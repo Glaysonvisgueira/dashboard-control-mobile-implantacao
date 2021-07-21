@@ -12,12 +12,12 @@ export function DashboardList(){
 
     return(
         <>
-            <Navbar />
+        <Navbar />
             <div className={styles.containerPage}>
-
+                         
                     <div className={styles.titleContainer}>
                         <div className={styles.titleAndIcon}>
-                        <BiListUl size={45} color="#141414"/>
+                        <BiListUl size={34} color="#468385"/>
                         <h1 className={styles.title}>&nbsp;Lista de dashboards</h1>
                         </div>
                         <span>Escolha uma das implantações/reciclagens disponíveis, para acessar seu dashboard.</span>
@@ -41,10 +41,10 @@ export function DashboardList(){
                     </Link>
                         
                     </div>
-                                
+                              
                 </div>
-            <Footer />  
-        </>
+           <Footer />
+           </>
     )
 }
 

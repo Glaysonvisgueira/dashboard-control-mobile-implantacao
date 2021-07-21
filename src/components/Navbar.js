@@ -18,22 +18,22 @@ export function Navbar() {
                 
                 <Link to="/" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <HiHome size={35} color="#fff" />
-                        <span>Home</span>
+                        {/* <HiHome size={35} color="#fff" /> */}
+                        <span>HOME</span>
                     </div>
                 </Link>
 
                 <Link to="/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <FaWarehouse size={35} color="#fff" />
-                        <span>Depósitos</span>
+                        {/* <FaWarehouse size={35} color="#fff" /> */}
+                        <span>DEPÓSITOS</span>
                     </div>
                 </Link>  
 
                 <Link to="/dashboards" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <VscGraph size={35} color="#fff" />
-                       <span>Dashboards</span>
+                       {/*  <VscGraph size={35} color="#fff" /> */}
+                       <span>DASHBOARDS</span>
                     </div>
                 </Link>
 
@@ -44,12 +44,12 @@ export function Navbar() {
                     </div>
                 </Link> */}
 
-               {/*  <Link to="/login" className={styles.linkText}>
+                 <Link to="/sobre" className={styles.linkText}>
                     <div className={styles.divLink}>
-                        <FiInfo size={35} color="#fff" />
-                        <span>Sobre</span>
+                        {/* <FiInfo size={35} color="#fff" /> */}
+                        <span>SOBRE</span>
                     </div>   
-                </Link>   */}
+                </Link>   
 
 
             </div>

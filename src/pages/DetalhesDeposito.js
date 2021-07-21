@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import api from "../services/api.js";
  
 import { BsCardList, BsPeopleFill, BsImages } from "react-icons/bs";
-import { BiCodeBlock } from "react-icons/bi";
+import { BiCodeBlock, BiListUl } from "react-icons/bi";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { FaNetworkWired, FaTools } from "react-icons/fa";
 import { IoArrowBack } from "react-icons/io5";
@@ -15,6 +15,7 @@ import styles from "../styles/pages/DetalhesDeposito.module.css";
 
 import {Navbar} from '../components/Navbar';
 import {Footer} from '../components/Footer';
+import {Loading} from '../components/Loading';
 
 import gerenteImg from "../assets/gerente.jpg";
 import organogramaImg from '../assets/organograma.PNG'
@@ -24,6 +25,7 @@ export function DetalhesDeposito(){
     const history = useHistory();
 
     const [deposito, setDeposito] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function getDadosDeposito() {
@@ -33,6 +35,7 @@ export function DetalhesDeposito(){
           console.log(sigla_deposito);
           const response = await api.get(`/depositos/${sigla_deposito}`);
           setDeposito(response.data);
+          setLoading(false); 
         }
         getDadosDeposito();
       }, []);
@@ -214,6 +217,28 @@ export function DetalhesDeposito(){
         );
       }
 
+      if(loading){
+        return (
+            <>
+                <Navbar />
+                    <div className={styles.containerPage}>
+                        
+                        <div className={styles.titleContainer}>
+                                <div className={styles.titleAndIcon}>
+                                <BiListUl size={34} color="#468385"/>
+                                <h1 className={styles.title}>&nbsp;Detalhes sobre o depósito</h1>
+                                </div>
+                                <span>Escolha um depósito para acessar suas informações.</span>
+                            </div>
+                    
+                            <Loading />
+                    </div>
+            <Footer />  
+            </>
+        )
+    }
+    
+
     return(
         <>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -226,14 +251,21 @@ export function DetalhesDeposito(){
             <Navbar />
             
                 <div className={styles.containerPage}>
+
+                {/* <div className={styles.titleContainer}>
+                                <div className={styles.titleAndIcon}>
+                                <BiListUl size={34} color="#468385"/>
+                                <h1 className={styles.title}>&nbsp;Detalhes sobre o depósito</h1>
+                                </div>
+                                <span>Escolha um depósito para acessar suas informações.</span>
+                </div> */}
                                     
                     <div className={styles.infoContainer}>
                       
                         <div className={styles.containerInfo}>
 
-                            <div className={styles.title}>
-                                <BsCardList size={40} color="#141414" />
-                                <h2>&nbsp;Informações</h2>
+                            <div className={styles.titleDois}>
+                               
                                 <div className={styles.containerFooter}>
                             
                                     <Tooltip content="Lideranças">
@@ -373,7 +405,7 @@ export function DetalhesDeposito(){
                                     `${deposito.dados_geograficos.location.latitude}`,
                                     `${deposito.dados_geograficos.location.longitude}`,
                                 ]}
-                                zoom={5.5}
+                                zoom={12}
                                 style={{width: '50%', height: '100%'}}
                                 scrollWheelZoom={true}
                             >
