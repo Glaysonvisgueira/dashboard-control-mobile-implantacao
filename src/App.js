@@ -10,8 +10,7 @@ import { ControlMobileDashboard } from "./pages/ControlMobileDashboard";
 import { ListaDepositos } from "./pages/ListaDepositos";
 import { DetalhesDeposito } from "./pages/DetalhesDeposito";
 import { Sobre } from "./pages/Sobre";
-
-
+import { Mapa } from "./pages/Mapa";
 
 function App() {
   return (
@@ -19,6 +18,7 @@ function App() {
         <Switch>          
           <Route path="/" exact component={HomePage} /> 
           <Route path="/login" exact component={Login} /> 
+          <Route path="/mapa/depositos" exact component={Mapa} /> 
           <Route path="/sobre" exact component={Sobre} /> 
           <Route path="/depositos" exact component={ListaDepositos} /> 
           <Route path="/depositos/:sigla_dep" exact component={DetalhesDeposito} />         

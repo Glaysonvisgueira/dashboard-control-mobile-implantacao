@@ -1,13 +1,28 @@
 
 
-.containerPage{
+.backgroundPage{
     display: flex;
     width: 100%;
-    height: 93%;
+    height: 92%;
+    background-image: linear-gradient(to bottom, #468385, #4d8c8f, #539598, #5a9fa2, #61a8ac, #67aeb2, #6cb5b8, #72bbbe, #78bfc2, #7ec3c6, #84c8cb, #8acccf);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 84%);
+    position: absolute;
+    z-index: 1;
+}
+
+.containerPage{
+    display: flex;    
+    width: 100%;
+    height: 92%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, #468385, #4d8c8f, #539598, #5a9fa2, #61a8ac, #67aeb2, #6cb5b8, #72bbbe, #78bfc2, #7ec3c6, #84c8cb, #8acccf);
+    
+   
+    /* background-image: linear-gradient(to bottom, #468385, #4d8c8f, #539598, #5a9fa2, #61a8ac, #67aeb2, #6cb5b8, #72bbbe, #78bfc2, #7ec3c6, #84c8cb, #8acccf);
+     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 84%);
+    position: absolute;
+    z-index: -3;   */
 }
 
 .containerLanding{
@@ -16,6 +31,7 @@
     align-items: center;
     flex-direction: row;
     width: 80%;
+    z-index: 2;
     
 }
 
@@ -27,10 +43,10 @@
     justify-content: space-around;
     padding: 30px;
     width: 35%;
-    height: 90%;
+    height: 70%;
     /* background-color: rgb(241, 241, 241);
     border-radius: 14px; */
-   
+    z-index: 2;
    
 }
 
@@ -70,5 +86,6 @@
 .button:hover{
     background-color: rgb(71, 131, 133);
     color: #fff;
+    transition: .25s ease-in;
 }
 

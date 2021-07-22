@@ -4,11 +4,18 @@ import { Link } from 'react-router-dom'
 
 import styles from "../styles/components/Navbar.module.css";
 
+import logoParaibaImg from '../assets/ap-logo.png'
+import logoReciclagemImg from '../assets/logo-reciclagem.png'
+
 export function Navbar() {
     return (
         <div className={styles.containerNavbar}>
             <div className={styles.containerOptions}>
-                
+                <div className={styles.logoContainer}>
+                    <img src={logoParaibaImg} alt="" style={{"width": "70px", "height": "70px"}} />
+                    <img src={logoReciclagemImg} alt="" style={{"width": "150px", "height": "50px", "margin-left": "15px"}} />
+                </div>
+                <div className={styles.options}>
                 <Link to="/" className={styles.linkText}>
                     <div className={styles.divLink}>
                         
@@ -33,7 +40,7 @@ export function Navbar() {
                 {/* <Link to="/mapa/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
                         
-                        <span>Mapa</span>
+                        <span>MAPA</span>
                     </div>
                 </Link> */}
 
@@ -43,6 +50,8 @@ export function Navbar() {
                         <span>SOBRE</span>
                     </div>   
                 </Link>  */}  
+                </div>
+                
 
 
             </div>
