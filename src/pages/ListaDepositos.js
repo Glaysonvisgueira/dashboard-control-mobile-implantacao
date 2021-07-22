@@ -15,7 +15,6 @@ export function ListaDepositos(){
     const [depositos, setDepositos] = useState([]);
     const [loading, setLoading] = useState(true);
 
-
     useEffect(() => {
         async function loadDepositos(){      
             const response = await api.get('/depositos')
@@ -67,7 +66,7 @@ export function ListaDepositos(){
                         <div className={styles.grid}>
                            
                                     
-                                    {depositos.map(deposito =>
+                                     {depositos.map(deposito =>
                                         <Link to={`/depositos/${deposito.sigla_dep.toLowerCase()}`} className={styles.linkDep}
                                                     onClick={() => {handleClickDeposito(deposito.sigla_dep)}} >
                                                  <div className={styles.card}>
@@ -76,7 +75,9 @@ export function ListaDepositos(){
                                                     <span className={styles.cidade}>{deposito.dados_geograficos.cidade} - {deposito.dados_geograficos.uf}</span>
                                                  </div> 
                                         </Link>
-                                    )}
+                                    )} 
+
+                                
                     </div>
                 </div>
             <Footer />  
