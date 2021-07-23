@@ -5,7 +5,8 @@
     width: 100%;
     height: 92%;
     background-image: linear-gradient(to bottom, #468385, #4d8c8f, #539598, #5a9fa2, #61a8ac, #67aeb2, #6cb5b8, #72bbbe, #78bfc2, #7ec3c6, #84c8cb, #8acccf);
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 84%);
+    clip-path: polygon(100% 0, 100% 50%, 0 100%, 0% 100%, 0 49%, 0% 0%); 
+    
     position: absolute;
     z-index: 1;
 }
