@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Router } from 'react-router-dom'
 
 import './styles/global.css';
 
@@ -12,9 +12,12 @@ import { DetalhesDeposito } from "./pages/DetalhesDeposito";
 import { Sobre } from "./pages/Sobre";
 import { Mapa } from "./pages/Mapa";
 
+import {history} from './history'
+import { PageNotFound } from './components/PageNotFound';
+
 function App() {
   return (
-    <BrowserRouter>     
+    <BrowserRouter history={history} >     
         <Switch>          
           <Route path="/" exact component={HomePage} /> 
           <Route path="/login" exact component={Login} /> 
@@ -24,7 +27,9 @@ function App() {
           <Route path="/depositos/:sigla_dep" exact component={DetalhesDeposito} />         
           <Route path="/dashboards" exact component={DashboardList} />
           <Route path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />
-          <Route path="/dashboards/geral" exact component={FaseDois} />         
+          <Route path="/dashboards/geral" exact component={FaseDois} />  
+
+           <Route component={PageNotFound} />        
         </Switch>      
   </BrowserRouter>
   );

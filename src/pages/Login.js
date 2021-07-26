@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import api from '../services/api.js'
+
 import Lottie from 'react-lottie';
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -10,8 +13,6 @@ import loginAnimation from '../assets/lotties/login.json'
 
 import logoImg from '../assets/logotipo.png'
 
-import { Navbar } from '../components/Navbar';
-import { Footer } from '../components/Footer';
 
 export function Login() {
 
@@ -30,13 +31,23 @@ export function Login() {
           preserveAspectRatio: 'xMidYMid slice'
         }
       };
+
+    async function handleLogin(){
+        const usuario = await api.get('/users', {
+            params:{
+                'email': user,                
+            }
+        }).then(response => {
+            console.log(usuario)
+        })
+    }
      
     return (
         <>
-            {/* <Navbar /> */}
+           
             <div className={styles.containerPage}>
                 <div className={styles.cardLogin}>
-                    <form className={styles.formContainer}>
+                    <form className={styles.formContainer} onSubmit={handleLogin}>
                         <div className={styles.logoContainer}>
                             <span className={styles.logoTextProjeto}>Projeto<br /><span className={styles.logoTextReciclagem}>RECICLAGEM</span></span>
                             <img src={logoImg} alt="logo" className={styles.logo}/>
@@ -89,7 +100,7 @@ export function Login() {
                 </div>
                     
             </div>
-            {/* <Footer /> */}
+            
         </>
     )
 }
