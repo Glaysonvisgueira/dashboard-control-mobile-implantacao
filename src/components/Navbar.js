@@ -8,6 +8,24 @@ import logoParaibaImg from '../assets/ap-logo.png'
 import logoReciclagemImg from '../assets/logo-reciclagem.png'
 
 export function Navbar() {
+
+    /* function showOptions(){
+        const token = localStorage.getItem(
+            "@projetoreciclagem:token"
+          );
+        
+        if(token){
+            return(
+                <Link to="/mapa/depositos" className={styles.linkText}>
+                     <div className={styles.divLink}>                        
+                         <span>LOGADO</span>
+                     </div>
+                 </Link>
+         )
+        }
+        
+    } */
+
     return (
         <div className={styles.containerNavbar}>
             <div className={styles.containerOptions}>
@@ -31,11 +49,12 @@ export function Navbar() {
                 </Link>  */} 
 
                 <Link to="/dashboards" className={styles.linkText}>
-                    <div className={styles.divLink}>
-                       
+                    <div className={styles.divLink}>                       
                        <span>DASHBOARDS</span>
                     </div>
                 </Link>
+
+               {/*  { showOptions() } */}
 
                 {/* <Link to="/mapa/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>

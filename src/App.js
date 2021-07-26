@@ -11,9 +11,9 @@ import { ListaDepositos } from "./pages/ListaDepositos";
 import { DetalhesDeposito } from "./pages/DetalhesDeposito";
 import { Sobre } from "./pages/Sobre";
 import { Mapa } from "./pages/Mapa";
+import { PageNotFound } from './components/PageNotFound';
 
 import {history} from './history'
-import { PageNotFound } from './components/PageNotFound';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
           <Route path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />
           <Route path="/dashboards/geral" exact component={FaseDois} />  
 
-           <Route component={PageNotFound} />        
+          <Route component={PageNotFound} />        
         </Switch>      
   </BrowserRouter>
   );

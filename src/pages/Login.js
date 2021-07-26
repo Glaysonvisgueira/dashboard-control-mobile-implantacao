@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useHistory } from "react-router-dom";
 import api from '../services/api.js'
 
 import Lottie from 'react-lottie';
@@ -15,9 +15,17 @@ import logoImg from '../assets/logotipo.png'
 
 
 export function Login() {
-
-    const [user, setUser] = useState();
-    const [password, setPassword] = useState();    
+    
+    
+    const history = useHistory();
+    
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();  
+    
+    var user = {
+        email: email,
+        password: password        
+    }
 
     const [animationState, setAnimationState] = useState({
         isStopped: false, isPaused: false
@@ -32,15 +40,25 @@ export function Login() {
         }
       };
 
-    async function handleLogin(){
-        const usuario = await api.get('/users', {
-            params:{
-                'email': user,                
+    async function handleLogin(e){
+        e.preventDefault();
+        let dataToSend = {
+            userData:{
+                email: user.email,
+                password: user.password
             }
-        }).then(response => {
-            console.log(usuario)
-        })
-    }
+        };       
+        const usuario = await api.post('/login', dataToSend, {
+             headers: {
+                    'Content-Type': 'application/json',                    
+              }}).then(response =>{
+                  console.log(response.data)
+                  if(response.data.success){
+                      localStorage.setItem('@projetoreciclagem:token', response.data.token);
+                      history.push('/');
+                  }
+              })
+        }
      
     return (
         <>
@@ -58,8 +76,8 @@ export function Login() {
                             <input
                                 placeholder="Usuário..."
                                 className={styles.input}
-                                value={user}
-                                onChange={e => setUser(e.target.value)}
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
                                 autoCapitalize={false}
                                 autoCorrect={false}
                                 required={true}
@@ -86,7 +104,7 @@ export function Login() {
                             <small className={styles.smallLink}>Esqueceu a senha?</small>
                             <small className={styles.smallLink}>Solicite o acesso</small>
                         </div>
-                         <button className={styles.button}>Login&nbsp;<BiLogInCircle size={28} color="#fff" /></button>
+                         <button type="submit" className={styles.button}>Login&nbsp;<BiLogInCircle size={28} color="#fff" /></button>
                     </form>
                    <div className={styles.lottieContainer}>
                         <Lottie 
