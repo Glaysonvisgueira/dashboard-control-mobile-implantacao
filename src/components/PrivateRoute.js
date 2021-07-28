@@ -4,6 +4,6 @@ import { isLogged } from '../utils/auth'
 
 const PrivateRoute = props => isLogged()
     ? <Route { ...props }/>
-    : <Redirect to="/" />
+    : <Redirect to="/login" />
 
 export default PrivateRoute;

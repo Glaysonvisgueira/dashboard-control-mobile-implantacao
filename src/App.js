@@ -17,24 +17,23 @@ import  PrivateRoute from './components/PrivateRoute';
 import  PublicRoute from './components/PublicRoute';
 
 
-import {history} from './history'
 
 function App() {
   return (
-    <BrowserRouter history={history} >     
+    <BrowserRouter  >     
         <Switch>          
           <PublicRoute path="/login" exact component={Login} /> 
-          <PrivateRoute path="/sobre" exact component={Sobre} /> 
           
-          <Route path="/" exact component={HomePage} /> 
-          <Route path="/mapa/depositos" exact component={Mapa} /> 
-          <Route path="/depositos" exact component={ListaDepositos} /> 
-          <Route path="/depositos/:sigla_dep" exact component={DetalhesDeposito} />         
-          <Route path="/dashboards" exact component={DashboardList} />
-          <Route path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />
-          <Route path="/dashboards/geral" exact component={FaseDois} />  
+          <PrivateRoute path="/sobre" exact component={Sobre} />           
+          <PrivateRoute path="/" exact component={HomePage} /> 
+          <PrivateRoute path="/mapa/depositos" exact component={Mapa} /> 
+          <PrivateRoute path="/depositos" exact component={ListaDepositos} /> 
+          <PrivateRoute path="/depositos/:sigla_dep" exact component={DetalhesDeposito} />         
+          <PrivateRoute path="/dashboards" exact component={DashboardList} />
+          <PrivateRoute path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />
+          <PrivateRoute path="/dashboards/geral" exact component={FaseDois} />  
 
-          <Route component={PageNotFound} />        
+          <PublicRoute component={PageNotFound} />        
         </Switch>      
   </BrowserRouter>
   );

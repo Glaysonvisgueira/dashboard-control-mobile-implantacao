@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+
 import api from '../services/api.js'
 
-import { login } from '../utils/auth';
+import { login, setUserData } from '../utils/auth';
 
-import Lottie from 'react-lottie';
-import { FaUserAlt } from "react-icons/fa";
-import { RiLockPasswordLine } from "react-icons/ri";
+
 import { BiLogInCircle } from "react-icons/bi";
+import typingImg from '../assets/typing.jpg'
 
 import styles from "../styles/pages/Login.module.css";
-
-import loginAnimation from '../assets/lotties/login.json'
-
-import logoImg from '../assets/logotipo.png'
-
 
 export function Login() {
     
@@ -29,18 +24,7 @@ export function Login() {
         password: password        
     }
 
-    const [animationState, setAnimationState] = useState({
-        isStopped: false, isPaused: false
-    });
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: loginAnimation,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
-        }
-      };
+    
 
     /* async function handleLogin(e){
         e.preventDefault();
@@ -64,9 +48,24 @@ export function Login() {
 
         async function handleLogin(e){
             e.preventDefault();
-            
-                login('123');
-                history.push('/');
+            let dataToSend = {
+                userData:{
+                    email: user.email,
+                    password: user.password
+                }
+            };       
+            const usuario = await api.post('/login', dataToSend, {
+                 headers: {
+                        'Content-Type': 'application/json',                    
+                  }}).then(response =>{
+                      console.log(response.data)
+                      if(response.data.success){    
+                          login(response.data.token);
+                          setUserData(JSON.stringify(response.data.userData))
+                          history.push('/');                          
+                      }
+                  })
+                
                           
             }
      
@@ -75,19 +74,23 @@ export function Login() {
            
             <div className={styles.containerPage}>
                 <div className={styles.cardLogin}>
-                    <form className={styles.formContainer} onSubmit={handleLogin}>
-                        <div className={styles.logoContainer}>
-                            <span className={styles.logoTextProjeto}>Projeto<br /><span className={styles.logoTextReciclagem}>RECICLAGEM</span></span>
-                            <img src={logoImg} alt="logo" className={styles.logo}/>
-                        </div>
+                    
+                   <div className={styles.leftContainer}>  
+                                <img src={typingImg} alt="Pessoa digitando" className={styles.loginImg} />
+                   </div>
+                   <form className={styles.formContainer} onSubmit={handleLogin}>
+                         <div className={styles.logoContainer}>
+                            <h1>Login</h1>
+                        </div> 
 
                         <div className={styles.inputContainer}>
-                            <FaUserAlt size={28} color="rgb(70, 131, 133)" />
+                            
                             <input
-                                placeholder="Usuário..."
+                                placeholder="E-mail..."
                                 className={styles.input}
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
+                                autoComplete={true}
                                 autoCapitalize={false}
                                 autoCorrect={false}
                                 required={true}
@@ -96,7 +99,7 @@ export function Login() {
                         </div>
 
                         <div className={styles.inputContainer}>
-                            <RiLockPasswordLine size={32} color="rgb(70, 131, 133)" />
+                            
                             <input
                                 placeholder="Senha..."
                                 className={styles.input}
@@ -110,23 +113,10 @@ export function Login() {
                                 maxLength={6}
                              />
                         </div>                        
-                        <div className={styles.containerSmallText}>
-                            <small className={styles.smallLink}>Esqueceu a senha?</small>
-                            <small className={styles.smallLink}>Solicite o acesso</small>
-                        </div>
-                         <button type="submit" className={styles.button}>Login&nbsp;<BiLogInCircle size={28} color="#fff" /></button>
+                        <button type="submit" className={styles.button}>Login&nbsp;<BiLogInCircle size={28} color="#fff" /></button>
+                        <span>Produzido por: equipe de padronização de depósitos</span>
                     </form>
-                   <div className={styles.lottieContainer}>
-                        <Lottie 
-                                    options={defaultOptions}
-                                    height={450}
-                                    width={650}                        
-                                    isStopped={animationState.isStopped}
-                                    isPaused={animationState.isPaused}
-                                /> 
-                   </div>
-                </div>
-                    
+                </div>                    
             </div>
             
         </>

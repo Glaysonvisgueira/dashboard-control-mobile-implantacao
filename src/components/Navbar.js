@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { logout, isLogged } from '../utils/auth';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 
-import { Link } from 'react-router-dom'
+import { logout, removeUserData, isAdmin } from '../utils/auth';
 
 import styles from "../styles/components/Navbar.module.css";
 
@@ -11,28 +11,46 @@ import logoReciclagemImg from '../assets/logo-reciclagem.png'
 
 export function Navbar() {
 
-     /* function showOptions(){
-        if(isLogged){
-            return(
-                <Link to="/mapa/depositos" className={styles.linkText}>
-                     <div className={styles.divLink}>                        
-                         <span>LOGADO</span>
-                     </div>
-                 </Link>
-         )
-        }
-        
-    } */
-
-    function redirectToLoginPage(){
-        history.push('/login')
-    }
+    /* function showOptions(){
+       if(isLogged){
+           return(
+               <Link to="/mapa/depositos" className={styles.linkText}>
+                    <div className={styles.divLink}>                        
+                        <span>LOGADO</span>
+                    </div>
+                </Link>
+        )
+       }
+       
+   } */
 
     const history = useHistory();
 
-    async function handleLogout(){
+
+    async function handleLogout() {
         logout();
+        removeUserData();
         history.push('/login')
+    }
+
+    function userIsAdmin() {
+        if (isAdmin()) {
+            return (
+                <div className={styles.options}>
+                    
+                    <Link to="/mapa/depositos" className={styles.linkText}>
+                        <div className={styles.divLink}>
+                            <span>MAPA</span>
+                        </div>
+                    </Link>
+                    <Link to="/sobre" className={styles.linkText}>
+                    <div className={styles.divLink}>
+                        <span>SOBRE</span>
+                    </div>   
+                    </Link>
+                </div>
+            )
+        }
     }
 
     return (
@@ -42,60 +60,51 @@ export function Navbar() {
                     <img src={logoParaibaImg} alt="" style={{"width": "70px", "height": "70px"}} />
                     <img src={logoReciclagemImg} alt="" style={{"width": "150px", "height": "50px", "margin-left": "15px"}} />
                 </div> */}
-                
+
                 <div className={styles.options}>
-                <Link to="/" className={styles.linkText}>
-                    <div className={styles.divLink}>
-                        
-                        <span>HOME</span>
-                    </div>
-                </Link>
+                    <Link to="/" className={styles.linkText}>
+                        <div className={styles.divLink}>
 
-                {/* <Link to="/depositos" className={styles.linkText}>
-                    <div className={styles.divLink}>
-                         
-                        <span>DEPÓSITOS</span>
-                    </div>
-                </Link>  */} 
+                            <span>HOME</span>
+                        </div>
+                    </Link>
 
-                <Link to="/dashboards" className={styles.linkText}>
-                    <div className={styles.divLink}>                       
-                       <span>DASHBOARDS</span>
-                    </div>
-                </Link>
+                    <Link to="/depositos" className={styles.linkText}>
+                        <div className={styles.divLink}>
+                            
+                            <span>DEPÓSITOS</span>
+                        </div>
+                    </Link> 
 
-               {/*  { showOptions()} */}
+                    <Link to="/dashboards" className={styles.linkText}>
+                        <div className={styles.divLink}>
+                            <span>DASHBOARDS</span>
+                        </div>
+                    </Link>
 
-                {/* <Link to="/mapa/depositos" className={styles.linkText}>
+                       { userIsAdmin() }
+
+                    {/* <Link to="/mapa/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
                         
                         <span>MAPA</span>
                     </div>
                 </Link> */}
 
-                 {/* <Link to="/sobre" className={styles.linkText}>
+                    {/* <Link to="/sobre" className={styles.linkText}>
                     <div className={styles.divLink}>
                         
                         <span>SOBRE</span>
                     </div>   
-                </Link>  */}  
+                </Link>  */}
                 </div>
-                
-                <div className={styles.options}> 
-                            {isLogged === true ? (
-                                      <div className={styles.divLink} onClick={redirectToLoginPage}>
-                                        <span className={styles.linkText}>LOGIN</span>
-                                      </div>
-                                        ) : (
-                                        <div className={styles.divLink} onClick={handleLogout}>
-                                            <span className={styles.linkText}>SAIR</span>
-                                        </div>
-                                        
-                                )}                     
-                                                             
-                                           
+
+                <div className={styles.options}>
+                    <div className={styles.divLink} onClick={handleLogout}>
+                        <span className={styles.linkText}>SAIR</span>
+                    </div>
                 </div>
-                
+
 
 
             </div>
