@@ -13,16 +13,21 @@ import { Sobre } from "./pages/Sobre";
 import { Mapa } from "./pages/Mapa";
 import { PageNotFound } from './components/PageNotFound';
 
+import  PrivateRoute from './components/PrivateRoute';
+import  PublicRoute from './components/PublicRoute';
+
+
 import {history} from './history'
 
 function App() {
   return (
     <BrowserRouter history={history} >     
         <Switch>          
+          <PublicRoute path="/login" exact component={Login} /> 
+          <PrivateRoute path="/sobre" exact component={Sobre} /> 
+          
           <Route path="/" exact component={HomePage} /> 
-          <Route path="/login" exact component={Login} /> 
           <Route path="/mapa/depositos" exact component={Mapa} /> 
-          <Route path="/sobre" exact component={Sobre} /> 
           <Route path="/depositos" exact component={ListaDepositos} /> 
           <Route path="/depositos/:sigla_dep" exact component={DetalhesDeposito} />         
           <Route path="/dashboards" exact component={DashboardList} />

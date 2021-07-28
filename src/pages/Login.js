@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import api from '../services/api.js'
 
+import { login } from '../utils/auth';
+
 import Lottie from 'react-lottie';
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -40,7 +42,7 @@ export function Login() {
         }
       };
 
-    async function handleLogin(e){
+    /* async function handleLogin(e){
         e.preventDefault();
         let dataToSend = {
             userData:{
@@ -58,7 +60,15 @@ export function Login() {
                       history.push('/');
                   }
               })
-        }
+        } */
+
+        async function handleLogin(e){
+            e.preventDefault();
+            
+                login('123');
+                history.push('/');
+                          
+            }
      
     return (
         <>
