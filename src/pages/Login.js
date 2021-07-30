@@ -5,7 +5,6 @@ import api from '../services/api.js'
 
 import { login, setUserData } from '../utils/auth';
 
-
 import { BiLogInCircle } from "react-icons/bi";
 import typingImg from '../assets/typing.jpg'
 
@@ -15,38 +14,16 @@ export function Login() {
     
     
     const history = useHistory();
-    
+
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();  
     
-    var user = {
+     var user = {
         email: email,
         password: password        
-    }
-
+    };
     
-
-    /* async function handleLogin(e){
-        e.preventDefault();
-        let dataToSend = {
-            userData:{
-                email: user.email,
-                password: user.password
-            }
-        };       
-        const usuario = await api.post('/login', dataToSend, {
-             headers: {
-                    'Content-Type': 'application/json',                    
-              }}).then(response =>{
-                  console.log(response.data)
-                  if(response.data.success){
-                      localStorage.setItem('@projetoreciclagem:token', response.data.token);
-                      history.push('/');
-                  }
-              })
-        } */
-
-        async function handleLogin(e){
+    async function handleLogin(e){
             e.preventDefault();
             let dataToSend = {
                 userData:{
@@ -67,8 +44,13 @@ export function Login() {
                   })
                 
                           
-            }
-     
+            } 
+
+           /*  async function handleLogin(e){
+                e.preventDefault();
+
+            } */
+
     return (
         <>
            
