@@ -13,34 +13,40 @@
 .formContainer{
     display: flex;
     position: relative;
-    flex: 3;
+    width: 100%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    background-color: #ffffff;    
 }
 
-.formContainer span{    
-    position: absolute;    
-    bottom: 10px;
-    color: rgb(189, 189, 189);    
-    padding: 4px 12px;
-    border-radius: 18px;
-    right: 10px;
+.checkBox {
+    display: flex;   
+    width: 70%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.checkBox span{
+    color: rgb(134, 134, 134);
+    margin-left: 5px;
 }
 
 .cardLogin{
-    display: flex;
-    
+    display: flex;    
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100%;   
-    
+    width: 600px;
+    height: 400px;       
     overflow: hidden;
-    perspective: 1px;
+    border-radius: 14px;
+    z-index: 2;
+    background-color: #fff;    
+    box-shadow: -1px 2px 36px 5px rgba(0, 0, 0, 0.74);
+    
 }
 
 .inputContainer{
@@ -48,19 +54,33 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
-}
-.input{
     width: 70%;
+    margin-top: 12px;
+}
+
+.icon{
+    background-color: rgb(240, 240, 240);
+    width: 40px;
     height: 40px;
-    margin-top: 10px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px 0 0 4px;
+    margin: 0;
+}
+
+.input{
+    width: 100%;
+    height: 40px;
+    /* margin-top: 10px; */
     color: rgb(100, 100, 100);
     border: none;
     border-radius: 4px;
     padding: 0 20px;   
     background-color: rgb(240, 240, 240);
     font-size: 14px; 
-    border-radius: 4px;
+    border-radius: 0px 4px 4px 0;
     
 }
 
@@ -117,12 +137,15 @@ input:focus {
 
 
 .loginImg{
+    position: absolute;
     display: flex;   
+    opacity: 0.4;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;   
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 30%, transparent 95%);
+    z-index: 1;
+    /* mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 30%, transparent 95%); */
 
 }
 
@@ -144,4 +167,9 @@ input:focus {
 
 .button:hover{    
     background-color: rgb(55, 92, 94);   
+}
+
+
+.button:active{    
+    background-color: rgb(34, 65, 66);   
 }

@@ -5,7 +5,7 @@
     width: 100%;
     height: 92%;
     background-image: linear-gradient(to bottom, #468385, #4d8c8f, #539598, #5a9fa2, #61a8ac, #67aeb2, #6cb5b8, #72bbbe, #78bfc2, #7ec3c6, #84c8cb, #8acccf);
-    clip-path: polygon(100% 0, 100% 50%, 0 100%, 0% 100%, 0 49%, 0% 0%); 
+   /*  clip-path: polygon(100% 0, 100% 50%, 0 100%, 0% 100%, 0 49%, 0% 0%);  */
     
     position: absolute;
     z-index: 1;
@@ -51,22 +51,27 @@
    
 }
 
-.landingInfo h1{
+.landingInfo span{
     color:rgb(255, 255, 255);
-    font-size: 44px;
+    font-size: 40px;
+    font-weight: 300;
+    
+}
+
+.landingInfo span strong{
+    background-color: #000000;
+    border-radius: 14px;
+    padding: 2px 14px;
+    font-size: 48px;
 }
 
 .landingInfo p{
-    font-size: 16px;
+    font-size: 28px;
     color: rgb(255, 255, 255);
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.landingInfo span{
-    font-weight: 800;
-    color: rgb(0, 0, 0);
-}
 
 .button{
     display: flex;

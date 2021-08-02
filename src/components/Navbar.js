@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 
@@ -10,22 +10,8 @@ import logoParaibaImg from '../assets/ap-logo.png'
 import logoReciclagemImg from '../assets/logo-reciclagem.png'
 
 export function Navbar() {
-
-    /* function showOptions(){
-       if(isLogged){
-           return(
-               <Link to="/mapa/depositos" className={styles.linkText}>
-                    <div className={styles.divLink}>                        
-                        <span>LOGADO</span>
-                    </div>
-                </Link>
-        )
-       }
-       
-   } */
-
+    
     const history = useHistory();
-
 
     async function handleLogout() {
         logout();
@@ -33,25 +19,24 @@ export function Navbar() {
         history.push('/login')
     }
 
-    function userIsAdmin() {
+    /* function userIsAdmin() {
         if (isAdmin()) {
             return (
-                <div className={styles.options}>
-                    
+                <div className={styles.options}>                    
                     <Link to="/mapa/depositos" className={styles.linkText}>
                         <div className={styles.divLink}>
                             <span>MAPA</span>
                         </div>
                     </Link>
                     <Link to="/sobre" className={styles.linkText}>
-                    <div className={styles.divLink}>
-                        <span>SOBRE</span>
-                    </div>   
+                        <div className={styles.divLink}>
+                            <span>SOBRE</span>
+                        </div>   
                     </Link>
                 </div>
             )
         }
-    }
+    } */
 
     return (
         <div className={styles.containerNavbar}>
@@ -62,16 +47,14 @@ export function Navbar() {
                 </div> */}
 
                 <div className={styles.options}>
-                    <Link to="/" className={styles.linkText}>
+                    <Link to="/" className={styles.linkText} >
                         <div className={styles.divLink}>
-
                             <span>HOME</span>
                         </div>
                     </Link>
 
                     <Link to="/depositos" className={styles.linkText}>
-                        <div className={styles.divLink}>
-                            
+                        <div className={styles.divLink}>                            
                             <span>DEPÓSITOS</span>
                         </div>
                     </Link> 
@@ -82,7 +65,13 @@ export function Navbar() {
                         </div>
                     </Link>
 
-                       { userIsAdmin() }
+                    <Link to="/mapa/depositos" className={styles.linkText}>
+                        <div className={styles.divLink}>
+                            <span>MAPA</span>
+                        </div>
+                    </Link>
+
+                      
 
                     {/* <Link to="/mapa/depositos" className={styles.linkText}>
                     <div className={styles.divLink}>
@@ -96,7 +85,7 @@ export function Navbar() {
                         
                         <span>SOBRE</span>
                     </div>   
-                </Link>  */}
+                </Link>  */}                
                 </div>
 
                 <div className={styles.options}>
