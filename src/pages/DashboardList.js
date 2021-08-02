@@ -28,7 +28,7 @@ export function DashboardList(){
                     <Link to="/dashboards/geral" className={styles.divLink}>
                         <div className={styles.card}>
                             <span>FASE 2</span>  
-                            <HiOutlinePlusCircle size={30} color="rgb(68, 68, 68)" className={styles.iconCard} />                      
+                                              
                         </div>
                     </Link>
                     
@@ -36,7 +36,7 @@ export function DashboardList(){
                         <Link to="/dashboards/controlmobile" className={styles.divLink}>
                         <div className={styles.card}>
                             <span>Control<br />Mobile</span>
-                            <HiOutlinePlusCircle size={30} color="rgb(68, 68, 68)" className={styles.iconCard} />                         
+                                                   
                         </div>
                     </Link>
                         

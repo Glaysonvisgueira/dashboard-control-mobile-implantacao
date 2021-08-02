@@ -2,7 +2,7 @@
     display: flex;
     position: relative;
     width: 100%;
-    height: 92%;
+    height: 94%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -46,31 +46,33 @@
 }
 
 .card{
+    margin: auto;
     display: flex;
     position: relative;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 200px;
+    height: 140px;
+    background-color: #ffffff;
+    border-radius: 4px;
     cursor: pointer;
-    width: 150px;
-    height: 150px;
-    color: rgb(68, 68, 68);
-    background-color: rgb(241, 241, 241);
-    border-radius: 12px;
-    margin: 10px;
-    text-align: center;    
+    color: rgb(112, 112, 112);  
+    border: 3px solid transparent;   
+    text-align: center; 
+    margin: 10px  
+}
+
+.card:hover{
+    border: 3px solid rgb(70, 131, 133);
+    background-color: rgb(70, 131, 133);
+    color: rgb(255, 255, 255);
 }
 
 .card span{
     font-size: 18px;
     font-weight: 800;
 }
-
-.iconCard{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-}
-
 
 .dashboardOption{
     background-color: rgb(243, 243, 243);

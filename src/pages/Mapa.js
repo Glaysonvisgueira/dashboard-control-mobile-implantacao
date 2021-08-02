@@ -31,7 +31,6 @@ export function Mapa() {
                 <div className={styles.containerPage}>
                     <Loading />
                 </div>
-                <Footer />
             </>
         )
     }
@@ -46,21 +45,27 @@ export function Mapa() {
                 crossorigin="">
             </script>
             <Navbar />
+            
 
             <div className={styles.containerPage}>
 
-
+            {/* <div className={styles.containerFilters}>
+                <button type="submit" className={styles.buttonFilter}/>
+                <button type="submit" className={styles.buttonFilter}/>
+                <button type="submit" className={styles.buttonFilter}/>
+                <button type="submit" className={styles.buttonFilter}/>
+            </div> */}
 
 
 
                 <MapContainer
-                    /* className={styles.map} */
+                    
                     center={[
                         -6.3211022,
                         -42.4216204,
                     ]}
                     zoom={6.5}
-                    style={{ width: '100%', height: '100%' }}
+                    style={{ width: '100%', height: '100%', zIndex: 1 }}
                     scrollWheelZoom={true}
                     doubleClickZoom={true}
 

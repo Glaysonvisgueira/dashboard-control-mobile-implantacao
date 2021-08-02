@@ -26,16 +26,17 @@ export function ControlMobileDashboard() {
 
     }, []);
 
-    if(loading){
+    if (loading) {
         return (
             <>
                 <Navbar />
-                <Loading />
-                <Footer />
+                <div className={styles.containerPage}>
+                    <Loading />
+                </div>
             </>
         )
     }
-    
+
     return (
         <>
             <Navbar />
@@ -53,13 +54,13 @@ export function ControlMobileDashboard() {
                     </div>
 
                     <div className={styles.grid}>
-                        {dashboards.map(deposito => 
-                                <div className={styles.card}>
-                                    <span className={styles.percentConclusion}>{deposito.controlmobile.dados_dashboard[0].value}%</span>
-                                    <span className={styles.siglaDeposito}>{deposito.sigla_dep} - {deposito.cidade}</span>
-                                    <PieChart width={200} height={200}>
-                                        <Pie data={deposito.controlmobile.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
-                                    </PieChart>
+                        {dashboards.map(deposito =>
+                            <div className={styles.card}>
+                                <span className={styles.percentConclusion}>{deposito.controlmobile.dados_dashboard[0].value}%</span>
+                                <span className={styles.siglaDeposito}>{deposito.sigla_dep} - {deposito.cidade}</span>
+                                <PieChart width={200} height={200}>
+                                    <Pie data={deposito.controlmobile.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
+                                </PieChart>
                             </div>
                         )}
                     </div>

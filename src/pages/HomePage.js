@@ -32,7 +32,8 @@ export function HomePage(){
                 <div className={styles.containerLanding}>
                 
                     <div className={styles.landingInfo}>
-                        <span>Seja bem vindo:<br/><strong>{user.nome} {user.sobrenome}</strong></span> 
+                        <span>Olá <strong>{user.nome}</strong>, seja bem vindo!</span> 
+                        
                         <p>Este portal consolida os dados coletados e dashboards<br/> que detalham o status de implantações realizadas
                             pela equipe<br/> do <strong >Projeto Reciclagem.</strong>
                         </p>

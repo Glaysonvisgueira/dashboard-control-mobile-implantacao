@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 
 import { logout, removeUserData, isAdmin } from '../utils/auth';
@@ -47,29 +47,29 @@ export function Navbar() {
                 </div> */}
 
                 <div className={styles.options}>
-                    <Link to="/" className={styles.linkText} >
+                    <NavLink to="/" exact className={styles.linkText} activeClassName={styles.activeLink}>
                         <div className={styles.divLink}>
                             <span>HOME</span>
                         </div>
-                    </Link>
+                    </NavLink>
 
-                    <Link to="/depositos" className={styles.linkText}>
+                    <NavLink to="/depositos" className={styles.linkText} activeClassName={styles.activeLink}>
                         <div className={styles.divLink}>                            
                             <span>DEPÓSITOS</span>
                         </div>
-                    </Link> 
+                    </NavLink> 
 
-                    <Link to="/dashboards" className={styles.linkText}>
+                    <NavLink to="/dashboards" className={styles.linkText} activeClassName={styles.activeLink}>
                         <div className={styles.divLink}>
                             <span>DASHBOARDS</span>
                         </div>
-                    </Link>
+                    </NavLink>
 
-                    <Link to="/mapa/depositos" className={styles.linkText}>
+                    <NavLink to="/mapa/depositos" className={styles.linkText} activeClassName={styles.activeLink}>
                         <div className={styles.divLink}>
                             <span>MAPA</span>
                         </div>
-                    </Link>
+                    </NavLink>
 
                       
 
