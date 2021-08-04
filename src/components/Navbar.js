@@ -6,6 +6,8 @@ import { logout, removeUserData, isAdmin } from '../utils/auth';
 
 import styles from "../styles/components/Navbar.module.css";
 
+import { IoLogOutOutline } from "react-icons/io5";
+
 import logoParaibaImg from '../assets/ap-logo.png'
 import logoReciclagemImg from '../assets/logo-reciclagem.png'
 
@@ -85,12 +87,14 @@ export function Navbar() {
                         
                         <span>SOBRE</span>
                     </div>   
-                </Link>  */}                
+                </Link>  */}
+                                
                 </div>
 
                 <div className={styles.options}>
-                    <div className={styles.divLink} onClick={handleLogout}>
-                        <span className={styles.linkText}>SAIR</span>
+                    <div className={styles.linkText} onClick={handleLogout}>
+                        <span className={styles.divLink}>SAIR</span>
+                        <IoLogOutOutline size={28} color="#fff" style={{'margin-left': '5px'}}/>
                     </div>
                 </div>
 

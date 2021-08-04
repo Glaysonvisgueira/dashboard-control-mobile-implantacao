@@ -90,26 +90,6 @@
     
 }
 
-.dadosFunc{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dadosFunc p{
-    margin: 5px;
-}
-
-
-.titleDois{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
 .titleDois h2{
     font-size: 35px;
@@ -131,6 +111,18 @@
     border: none;
     background-color: rgb(70, 131, 133);
     cursor: pointer;
+}
+
+.titleModal{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    font-weight: 300;
+   
 }
 
 .button:hover{    
@@ -155,33 +147,100 @@
     
 }
 
-.cardFuncionario{
-    height: 28%;
-    margin: 4px;
-    width: 50%;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: row;
-    background-color: rgb(243, 243, 243);
-    border-radius: 14px;
-}
-
 .imgContainer{
     display: flex;   
     width: 100%; 
     height: 100%;
     flex: 3;
-    border-radius: 0 14px 14px 0;
-    
+    border-radius: 0 14px 14px 0; 
+}
+.cardFuncionario{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 28%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+    margin: 5px;
+    overflow: hidden;
+    padding: 0px;
+    border: 2px solid rgb(51, 51, 51);
 }
 
-.funcionarioDados{
+.titleFuncao{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 0 8px;
+    border-radius: 4px;
+}
+
+
+.funcionarioImg{
+    width: 100%;
+    height: 60%;
+    border-radius: 0px;
+}
+
+.dadosFuncionarios{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    flex: 7;
-    margin-top: 25px;
+    width: 100%;
+    padding: 5%;
+}
+
+.rowDadosFuncionario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 3px;
+}
+
+.securityItemCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 280px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: 800;
+    color: rgb(68, 68, 68);
+    font-size: 18px;
+    margin: auto;
+}
+
+
+.securityItemIconContainer{ 
+    background-color: #457172;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.containerFuncionarios{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
 }
 
 .depositoDados{
@@ -193,23 +252,152 @@
     margin-top: 55px;
 }
 
-.imgGerente{
-        
+.imgGerente{        
     border-radius: 0 14px 14px 0;
+    position: relative;
 }
 
-.containerModal{
+
+.containerPageForModal{
     display: flex;
+    position: relative;
     width: 100%;
     height: 100%;
-    padding: 24px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-:root {
-    --st-modal-minWidth: 1400px;
+.containerPageForModalForSecurity{
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 100%;    
+    border-radius: 14px;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridSecurity{
+    display: grid;
+    margin: auto;
+    width: 80%;
+    height: 70%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em
+    
+}
+
+.containerModal{
+    display: flex;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    padding: 30px;
+    border-radius: 14px;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerModalForSistemas{
+    display: flex;
+    position: relative;
+    width: 60%;
+    height: 60%;
+    padding: 30px;
+    border-radius: 14px;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerSistemas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sistemaOption{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 80px;
+    color: rgb(43, 43, 43);
+    font-weight: 800;
+    font-size: 20px;
+    margin: 15px;
+    border-radius: 4px;
+}
+
+
+.containerModalOrgranograma{
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 14px;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.organograma{
+    width: 90%;
+    height: 90%;
+}
+
+.lastUpdate{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-size: 14px;
+    color: rgb(130, 130, 130);
+}
+
+.containerModalForFotos{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 14px;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonCloseModal{
+    padding: 8px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(231, 88, 88);
+    cursor: pointer;    
+}
+
+.buttonCloseModal:hover{
+    background-color: rgb(214, 43, 43);
+}
+
+.buttonCloseModal:active{
+    background-color: rgb(185, 8, 8);
 }
 
 .backButton{

@@ -36,13 +36,17 @@
     
 }
 
- .linkText{     
+ .linkText{
     text-decoration: none !important;
     color: rgb(255, 255, 255); 
     font-size: 16px;
     letter-spacing: 2px;
     font-weight: 800; 
-    text-decoration: none;  
+    text-decoration: none; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
     
    
   }

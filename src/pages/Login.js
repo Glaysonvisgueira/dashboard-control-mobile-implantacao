@@ -15,59 +15,58 @@ import typingImg from '../assets/typing.jpg'
 import styles from "../styles/pages/Login.module.css";
 
 export function Login() {
-    
-    
+
+
     const history = useHistory();
 
     const [email, setEmail] = useState();
-    const [password, setPassword] = useState(); 
-    
+    const [password, setPassword] = useState();
+
     const [savedEmail, setSavedEmail] = useState('');
-    
-     var user = {
+
+    var user = {
         email: email,
-        password: password        
+        password: password
     };
-    
-    async function handleLogin(e){
-            e.preventDefault();
-            let dataToSend = {
-               
-                    email: user.email,
-                    password: user.password
-                
-            };            
-            const usuario = await api.post('/login', dataToSend, {
-                 headers: {
-                        'Content-Type': 'application/json',                    
-                  }}).then(response =>{                      
-                      if(response.data.message === "success"){                            
-                          login(response.data.token);
-                          setUserData(JSON.stringify(response.data.dataToSend))
-                          history.push('/');                          
-                      }
-                  })      
-            } 
 
+    async function handleLogin(e) {
+        e.preventDefault();
+        let dataToSend = {
+            email: user.email,
+            password: user.password
+        };
+        const usuario = await api.post('/login', dataToSend, {
+            withCredentials: true
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(response => {
+            if (response.data.message === "success") {
+                login(response.data.token);
+                setUserData(JSON.stringify(response.data.dataToSend))
+                history.push('/');
+            }
+        })
+    }
 
-           
     return (
         <>
             <img src={typingImg} alt="Pessoa digitando" className={styles.loginImg} />
             <div className={styles.containerPage}>
-                
+
                 <div className={styles.cardLogin}>
-                    
-                   {/* <div className={styles.leftContainer}>  
+
+                    {/* <div className={styles.leftContainer}>  
                                 
                    </div> */}
-                   <form className={styles.formContainer} onSubmit={handleLogin}>
-                         <div className={styles.logoContainer}>
+                    <form className={styles.formContainer} onSubmit={handleLogin}>
+                        <div className={styles.logoContainer}>
                             <h1>Login</h1>
-                        </div> 
+                        </div>
 
                         <div className={styles.inputContainer}>
-                            <AiOutlineUser size={30} color="rgb(50, 50, 50)" className={styles.icon}/>
+                            <AiOutlineUser size={30} color="rgb(50, 50, 50)" className={styles.icon} />
                             <input
                                 placeholder="E-mail..."
                                 className={styles.input}
@@ -77,12 +76,12 @@ export function Login() {
                                 autoCapitalize={false}
                                 autoCorrect={false}
                                 required={true}
-                                spellCheck={false}                                
+                                spellCheck={false}
                             />
                         </div>
 
-                        <div className={styles.inputContainer}>    
-                            <RiShieldKeyholeLine size={30} color="rgb(50, 50, 50)" className={styles.icon}/>                        
+                        <div className={styles.inputContainer}>
+                            <RiShieldKeyholeLine size={30} color="rgb(50, 50, 50)" className={styles.icon} />
                             <input
                                 placeholder="Senha..."
                                 className={styles.input}
@@ -93,19 +92,19 @@ export function Login() {
                                 autoCorrect={false}
                                 required={true}
                                 spellCheck={false}
-                                maxLength={6}                                
-                             />
-                        </div>                        
+                                maxLength={6}
+                            />
+                        </div>
                         <button type="submit" className={styles.button}>Login&nbsp;<BiLogInCircle size={28} color="#fff" /></button>
                         <div className={styles.checkBox}>
                             <input type="checkbox" id="userEmail" name="userEmail" value={savedEmail} />
                             <span>Lembrar-me do e-mail</span>
                         </div>
-                        
+
                     </form>
-                </div>                    
+                </div>
             </div>
-            
+
         </>
     )
 }
