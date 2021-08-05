@@ -39,7 +39,7 @@ export function Login() {
             withCredentials: true
         }, {
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'                
             }
         }).then(response => {
             if (response.data.message === "success") {
