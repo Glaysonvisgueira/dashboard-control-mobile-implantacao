@@ -9534,6 +9534,11 @@ react-fade-in@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-fade-in/-/react-fade-in-2.0.1.tgz#b4bcd7dac63d6857ebcd68facbff2f5f9616278f"
   integrity sha512-oqS/WT4znaXEHmL+yo0IDUDY7uC9K4RP35j1SdRUEBspR09B2iIC0i8oJ28tPOr6Ez/L2aktF9p89j+DbsTVNw==
 
+react-gallery-carousel@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-gallery-carousel/-/react-gallery-carousel-0.2.3.tgz#8baf7578472e5cea3858fe27bea5a1d55329120f"
+  integrity sha512-vbWeSQeSKFahsnomaRKfVi3iheb2GlmmoRCKW+IxMbVJ+8AG9V07PY+wLUvXZ6m877RdYL9AiV0rF+JxfNKNOQ==
+
 react-icons@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"

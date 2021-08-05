@@ -42,7 +42,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(255, 255, 255);
     border-radius: 14px;
 }
 
@@ -56,16 +56,16 @@
 
 .dados p{   
    margin: 5px;
-   font-size: 18px;
+   font-size: 16px;
    color: rgb(39, 39, 39);
 
 }
 
 .simBadge{
     background-color: rgb(83, 184, 70);
-    padding: 2px 10px;
+    padding: 2px 9px;
     border-radius: 4px;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 16px;    
     color: #fff;
 }
@@ -74,7 +74,7 @@
     background-color: rgb(187, 52, 52);    
     padding: 2px 6px;
     border-radius: 4px;   
-    font-weight: 800;
+    font-weight: 400;
     font-size: 16px;     
     color: #fff;
 }
@@ -84,7 +84,7 @@
     color: #fff;
     padding: 2px 6px;
     border-radius: 4px;   
-    font-weight: 800;
+    font-weight: 400;
     font-size: 16px;   
     margin-left: 4px; 
     
@@ -142,7 +142,7 @@
 }
 
 .map{
-    flex: 5;
+    flex: 4;
     border-radius: 0 14px 14px 0;   
     
 }
@@ -157,17 +157,15 @@
 .cardFuncionario{
     display: flex;
     position: relative;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     height: 80%;
-    width: 28%;
+    width: 30%;
     background-color: rgb(255, 255, 255);
     border-radius: 0px;
     margin: 5px;
-    overflow: hidden;
-    padding: 0px;
-    border: 2px solid rgb(51, 51, 51);
+    overflow: hidden;    
 }
 
 .titleFuncao{
@@ -184,9 +182,9 @@
 
 
 .funcionarioImg{
-    width: 100%;
-    height: 60%;
-    border-radius: 0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
 }
 
 .dadosFuncionarios{
@@ -205,6 +203,7 @@
     flex-direction: row;
     width: 100%;
     margin-top: 3px;
+    font-size: 12px;
 }
 
 .securityItemCard{
@@ -280,6 +279,18 @@
     align-items: center;
 }
 
+.containerModalForEquipamentos{
+    display: flex;
+    position: relative;
+    width: 80%;
+    height: 100%;    
+    border-radius: 14px;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .gridSecurity{
     display: grid;
     margin: auto;
@@ -288,6 +299,26 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.5em
     
+}
+
+.gridEquipamentos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    background-color: bisque;
+}
+
+.cardEquipamentos{
+    margin: auto;
+    width: 40%;
+    height: 60px;
+    background-color: #dfdfdf;
+    border-radius: 8px;
 }
 
 .containerModal{
@@ -367,7 +398,7 @@
 .containerModalForFotos{
     display: flex;
     position: relative;
-    width: 100%;
+    width: 80%;
     height: 100%;
     padding: 30px;
     border-radius: 14px;
