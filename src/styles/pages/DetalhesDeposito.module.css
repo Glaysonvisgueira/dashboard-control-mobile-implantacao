@@ -217,7 +217,7 @@
     border-radius: 8px;
     margin: 10px;
     padding: 10px;
-    font-weight: 800;
+    font-weight: 400;
     color: rgb(68, 68, 68);
     font-size: 18px;
     margin: auto;
@@ -225,7 +225,7 @@
 
 
 .securityItemIconContainer{ 
-    background-color: #457172;
+    background-color: #8acccf;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -302,24 +302,37 @@
 }
 
 .gridEquipamentos{
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 60%;
+    padding: 24px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5em;   
     margin: auto;
-    width: 80%;
-    height: 80%;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5em;
-    background-color: bisque;
 }
 
 .cardEquipamentos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
     margin: auto;
-    width: 40%;
-    height: 60px;
-    background-color: #dfdfdf;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
     border-radius: 8px;
+    margin: auto;
 }
+
+.cardEquipamentos span{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(67, 67, 67);
+}
+
+
 
 .containerModal{
     display: flex;

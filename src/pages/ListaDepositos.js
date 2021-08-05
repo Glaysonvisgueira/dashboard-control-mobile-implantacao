@@ -69,7 +69,7 @@ export function ListaDepositos(){
                                      {depositos.map(deposito =>
                                         <Link to={`/depositos/${deposito.sigla_dep.toLowerCase()}`} className={styles.linkDep}
                                                     onClick={() => {handleClickDeposito(deposito.sigla_dep)}} >
-                                                 <div className={styles.card}>
+                                                     <div className={styles.card}>
                                                     
                                                     <span className={styles.textDeposito}>{deposito.sigla_dep}</span>
                                                     <span className={styles.cidade}>{deposito.dados_geograficos.cidade} - {deposito.dados_geograficos.uf}</span>

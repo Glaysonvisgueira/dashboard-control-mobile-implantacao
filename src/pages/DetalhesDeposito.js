@@ -31,6 +31,8 @@ import { GrContactInfo } from "react-icons/gr";
 import { RiAlarmWarningLine } from "react-icons/ri";
 import { GiButtonFinger, GiHound, GiPoliceOfficerHead } from "react-icons/gi";
 
+import interrogacaoImg from '../assets/interrogacao.jpg'
+
 import styles from "../styles/pages/DetalhesDeposito.module.css";
 import "react-gallery-carousel/dist/index.css";
 
@@ -351,106 +353,207 @@ export function DetalhesDeposito() {
                               </div>
                             </div>
                           </div>
+                          {deposito.funcionario_num2 === null
+                            ? (
+                              <div className={styles.cardFuncionario}>
+                                {/* <span className={styles.titleFuncao}>FUNC. NÚMERO DOIS</span> */}
+                                <img
+                                  src={interrogacaoImg}
+                                  alt="Sem funcionário número dois"
+                                  className={styles.funcionarioImg}
+                                />
+                                <div className={styles.dadosFuncionarios}>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <FaUser size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Nome de guerra
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      -
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <GrContactInfo size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Nome completo
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      -
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <FaIdBadge size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Número geral
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      -
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <MdDateRange size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Admissão
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      -
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <FaBirthdayCake size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Nascimento
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      -
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                            : (
 
-                          <div className={styles.cardFuncionario}>
-                            {/* <span className={styles.titleFuncao}>FUNC. NÚMERO DOIS</span> */}
-                            <img
-                              src={`${deposito.funcionario_num2.foto_url}`}
-                              alt="Funcionário número dois"
-                              className={styles.funcionarioImg}
-                            />
-                            <div className={styles.dadosFuncionarios}>
-                              <div className={styles.rowDadosFuncionario}>
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <FaUser size={22} color="#000" />
-                                  <span style={{ "margin-left": "5px" }}>
-                                    Nome de guerra
-                                  </span>
+                              <div className={styles.cardFuncionario}>
+                                {/* <span className={styles.titleFuncao}>FUNC. NÚMERO DOIS</span> */}
+                                <img
+                                  src={`${deposito.funcionario_num2.foto_url}`}
+                                  alt="Funcionário número dois"
+                                  className={styles.funcionarioImg}
+                                />
+                                <div className={styles.dadosFuncionarios}>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <FaUser size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Nome de guerra
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      {deposito.funcionario_num2.nome_guerra}
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <GrContactInfo size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Nome completo
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      {deposito.funcionario_num2.nome_completo}
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <FaIdBadge size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Número geral
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      {deposito.funcionario_num2.num_geral}
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <MdDateRange size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Admissão
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      {moment(
+                                        deposito.funcionario_num2.data_admissao
+                                      ).format("L")}
+                                    </span>
+                                  </div>
+                                  <div className={styles.rowDadosFuncionario}>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <FaBirthdayCake size={22} color="#000" />
+                                      <span style={{ "margin-left": "5px" }}>
+                                        Nascimento
+                                      </span>
+                                    </div>
+                                    <span style={{ "font-weight": "800" }}>
+                                      {moment(
+                                        deposito.funcionario_num2.data_nascimento
+                                      ).format("L")}
+                                    </span>
+                                  </div>
                                 </div>
-                                <span style={{ "font-weight": "800" }}>
-                                  {deposito.funcionario_num2.nome_guerra}
-                                </span>
                               </div>
-                              <div className={styles.rowDadosFuncionario}>
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <GrContactInfo size={22} color="#000" />
-                                  <span style={{ "margin-left": "5px" }}>
-                                    Nome completo
-                                  </span>
-                                </div>
-                                <span style={{ "font-weight": "800" }}>
-                                  {deposito.funcionario_num2.nome_completo}
-                                </span>
-                              </div>
-                              <div className={styles.rowDadosFuncionario}>
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <FaIdBadge size={22} color="#000" />
-                                  <span style={{ "margin-left": "5px" }}>
-                                    Número geral
-                                  </span>
-                                </div>
-                                <span style={{ "font-weight": "800" }}>
-                                  {deposito.funcionario_num2.num_geral}
-                                </span>
-                              </div>
-                              <div className={styles.rowDadosFuncionario}>
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <MdDateRange size={22} color="#000" />
-                                  <span style={{ "margin-left": "5px" }}>
-                                    Admissão
-                                  </span>
-                                </div>
-                                <span style={{ "font-weight": "800" }}>
-                                  {moment(
-                                    deposito.funcionario_num2.data_admissao
-                                  ).format("L")}
-                                </span>
-                              </div>
-                              <div className={styles.rowDadosFuncionario}>
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <FaBirthdayCake size={22} color="#000" />
-                                  <span style={{ "margin-left": "5px" }}>
-                                    Nascimento
-                                  </span>
-                                </div>
-                                <span style={{ "font-weight": "800" }}>
-                                  {moment(
-                                    deposito.funcionario_num2.data_nascimento
-                                  ).format("L")}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
+                            )}
+
                         </div>
                         <button
                           className={styles.buttonCloseModal}
@@ -537,16 +640,167 @@ export function DetalhesDeposito() {
                           {deposito.sigla_dep}
                         </span>
                         <div className={styles.gridEquipamentos}>
-                            <div className={styles.cardEquipamentos}>
-                                
-                            </div>
+                          
+                          <div className={styles.cardEquipamentos}>
+                            <span>PORTA PALLET</span>
+                            {deposito.infraestrutura.equipamentos.porta_pallet === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
 
-                            <div className={styles.cardEquipamentos}>
-                                
-                            </div>
-                            
-                           
-                           
+                          <div className={styles.cardEquipamentos}>
+                          <span>PALLET</span>
+                            {deposito.infraestrutura.equipamentos.pallet === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                            <span>RACK DE MOVIMENTAÇÃO</span>
+                            {deposito.infraestrutura.equipamentos.rack_movimentacao === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>CARRINHO DE PLATAFORMA</span>
+                            {deposito.infraestrutura.equipamentos.carrinho_plataforma === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                            <span>BALANÇA DIGITAL</span>
+                            {deposito.infraestrutura.equipamentos.balanca_digital === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>BALANÇA</span>
+                            {deposito.infraestrutura.equipamentos.balanca === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                            <span>ESTEIRA FLEXÍVEL</span>
+                            {deposito.infraestrutura.equipamentos.esteira_flexivel === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>EMPILHADEIRA A GÁS</span>
+                            {deposito.infraestrutura.equipamentos.empilhadeira_gas === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                            <span>EMPILHADEIRA ELÉTRICA</span>
+                            {deposito.infraestrutura.equipamentos.empilhadeira_eletrica === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>PALLET</span>
+                            {deposito.infraestrutura.equipamentos.pallet === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+                          <div className={styles.cardEquipamentos}>
+                            <span>TRANSPALETEIRA MANUAL</span>
+                            {deposito.infraestrutura.equipamentos.transpaleteira_manual === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>TRANSPALETEIRA ELÉTRICA</span>
+                            {deposito.infraestrutura.equipamentos.transpaleteira_eletrica === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                            <span>ESCADA DE PLATAFORMA</span>
+                            {deposito.infraestrutura.equipamentos.escada_plataforma === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>CARRINHO DE ARMAZENAGEM</span>
+                            {deposito.infraestrutura.equipamentos.carrinho_armazenagem === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+                          <div className={styles.cardEquipamentos}>
+                            <span>CAIXA AZUL</span>
+                            {deposito.infraestrutura.equipamentos.caixa_azul === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}                        
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>MOVIMENTADOR DE VIDRO</span>
+                            {deposito.infraestrutura.equipamentos.movimentador_vidro === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>ARMAZENADOR DE VIDRO</span>
+                            {deposito.infraestrutura.equipamentos.armazenador_vidro === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
+                          <div className={styles.cardEquipamentos}>
+                          <span>GAIOLA DE PORTÁTEIS</span>
+                            {deposito.infraestrutura.equipamentos.gaiola_portateis === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}   
+                          </div>
+
                         </div>
                         <button
                           className={styles.buttonCloseModal}
@@ -554,7 +808,7 @@ export function DetalhesDeposito() {
                         >
                           <IoIosCloseCircleOutline size={38} color="#fff" />
                         </button>
-                       
+
                       </div>
                     </div>
                   )}
@@ -586,8 +840,8 @@ export function DetalhesDeposito() {
                           &nbsp;&nbsp;Fotos | {deposito.sigla_dep}
                         </span>
                         <Carousel
-                            images={images}
-                            style={{ 'width': "100vh",  'height': "90%" }}
+                          images={images}
+                          style={{ 'width': "100vh", 'height': "90%" }}
                         />
                         <button
                           className={styles.buttonCloseModal}
@@ -633,7 +887,7 @@ export function DetalhesDeposito() {
                             </div>
                             <span>CFTV</span>
                             {deposito.infraestrutura.metodos_seguranca.cftv ===
-                            true ? (
+                              true ? (
                               <AiOutlineCheckCircle size={50} color="#33b507" />
                             ) : (
                               <AiOutlineCloseCircle size={50} color="#a30f0f" />
