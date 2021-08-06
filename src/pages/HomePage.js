@@ -6,7 +6,6 @@ import styles from "../styles/pages/HomePage.module.css";
 import landingImg from '../assets/landing.jpg'
 
 import {Navbar} from '../components/Navbar';
-import { AuthContext } from '../contexts/auth';
 
 export function HomePage(){ 
 

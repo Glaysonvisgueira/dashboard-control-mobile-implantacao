@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const STORAGE_KEY = '@projetoreciclagem:token'
 const USERDATA_KEY = '@projetoreciclagem:user'
 

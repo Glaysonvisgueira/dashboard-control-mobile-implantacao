@@ -32,21 +32,26 @@ export function Login() {
     async function handleLogin(e) {
         e.preventDefault();
         let dataToSend = {
-            email: user.email,
-            password: user.password
-        };
+            userData:{
+                email: user.email,
+                password: user.password,
+                nome: user.nome
+            }
+        };    
         const usuario = await api.post('/login', dataToSend, {
-            withCredentials: true
+            
         }, {
             headers: {
                 'Content-Type': 'application/json'                
             }
         }).then(response => {
-            if (response.data.message === "success") {
+            /* console.log(response.data) */
+            if(response.data.success){                            
                 login(response.data.token);
-                setUserData(JSON.stringify(response.data.dataToSend))
-                history.push('/');
+                setUserData(JSON.stringify(response.data.userData))                
+                history.push('/'); 
             }
+            
         })
     }
 
