@@ -22,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     width: 95%;
-    height: 80vh;
+    height: 94%;
     
     border-radius: 14px;
 }
@@ -67,9 +67,10 @@
 
 .grid {
     display: grid;
-    width: 90%;
+    margin: auto;
+    width: 100%;
     padding: 15px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 2em;  
     border-radius: 8px; 
 }
@@ -79,8 +80,9 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 210px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     border-radius: 14px;
 }
@@ -92,9 +94,16 @@
     color: #43cc46;
 }
 
+.percentConclusionZero{
+    position: absolute;
+    font-weight: 400;
+    font-size: 24px;
+    color: #a2a2a2;
+}
+
 .siglaDeposito{
     position: absolute;
-    bottom: 5px;
+    bottom: -20px;
     font-weight: 300;
     font-size: 16px;
     color: #3d3d3d;
@@ -127,7 +136,7 @@
   
   .progressBar div {
     background-color: #43cc46;
-    width: 33%;    
+    width: 26%;    
     height: 20px;
     border-radius: 100px 0px 0 100px ;
   }

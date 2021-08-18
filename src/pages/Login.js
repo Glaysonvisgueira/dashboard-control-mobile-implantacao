@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-
-import api from '../services/api.js'
-
 import { login, setUserData } from '../utils/auth';
+import api from '../services/api.js'
+import * as Yup from 'yup';
 
 import { AiOutlineUser } from "react-icons/ai";
 import { RiShieldKeyholeLine } from "react-icons/ri";
-
 import { BiLogInCircle } from "react-icons/bi";
 
 import typingImg from '../assets/typing.jpg'
@@ -24,6 +22,11 @@ export function Login() {
 
     const [savedEmail, setSavedEmail] = useState('');
 
+    const schema = Yup.object().shape({
+        email: Yup.string().required().email('*Endereço de e-mail inválido.'),
+        password: Yup.string().min(6).max(6).required('*Senha deve possuir 6 caracteres.'),
+    });
+
     var user = {
         email: email,
         password: password
@@ -32,28 +35,34 @@ export function Login() {
     async function handleLogin(e) {
         e.preventDefault();
         let dataToSend = {
-            userData:{
+            userData: {
                 email: user.email,
                 password: user.password,
                 nome: user.nome
             }
-        };    
+        };
+        
+  
         const usuario = await api.post('/login', dataToSend, {
-            
+
         }, {
             headers: {
-                'Content-Type': 'application/json'                
+                'Content-Type': 'application/json'
             }
         }).then(response => {
+
             /* console.log(response.data) */
-            if(response.data.success){                            
+            if (response.data.success) {
                 login(response.data.token);
-                setUserData(JSON.stringify(response.data.userData))                
-                history.push('/'); 
+                setUserData(JSON.stringify(response.data.userData))
+                history.push('/');
             }
-            
+
         })
     }
+
+
+
 
     return (
         <>
@@ -65,7 +74,7 @@ export function Login() {
                     {/* <div className={styles.leftContainer}>  
                                 
                    </div> */}
-                    <form className={styles.formContainer} onSubmit={handleLogin}>
+                    <form className={styles.formContainer} onSubmit={handleLogin} validationSchema={schema}>
                         <div className={styles.logoContainer}>
                             <h1>Login</h1>
                         </div>
@@ -77,14 +86,14 @@ export function Login() {
                                 className={styles.input}
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
-                                autoComplete="on"
+                                autoComplete={true}
                                 autoCapitalize={false}
                                 autoCorrect={false}
                                 required={true}
                                 spellCheck={false}
                             />
                         </div>
-
+                       
                         <div className={styles.inputContainer}>
                             <RiShieldKeyholeLine size={30} color="rgb(50, 50, 50)" className={styles.icon} />
                             <input
@@ -98,6 +107,7 @@ export function Login() {
                                 required={true}
                                 spellCheck={false}
                                 maxLength={6}
+                                
                             />
                         </div>
                         <button type="submit" className={styles.button}>Login&nbsp;<BiLogInCircle size={28} color="#fff" /></button>
@@ -107,6 +117,8 @@ export function Login() {
                         </div>
 
                     </form>
+
+
                 </div>
             </div>
 

@@ -920,13 +920,26 @@ export function DetalhesDeposito() {
                             )}
                           </div>
 
-                          <div className={styles.securityItemCard}>
+                          {/* <div className={styles.securityItemCard}>
                             <div className={styles.securityItemIconContainer}>
                               <GiHound size={100} color="#fff" />
                             </div>
                             <span>SEGURANÇA CANINA</span>
                             {deposito.infraestrutura.metodos_seguranca
                               .seg_canica === true ? (
+                              <AiOutlineCheckCircle size={50} color="#33b507" />
+                            ) : (
+                              <AiOutlineCloseCircle size={50} color="#a30f0f" />
+                            )}
+                          </div> */}
+
+                          <div className={styles.securityItemCard}>
+                            <div className={styles.securityItemIconContainer}>
+                              <GiHound size={100} color="#fff" />
+                            </div>
+                            <span>SEGURANÇA CANINA</span>
+                            {deposito.infraestrutura.metodos_seguranca.seg_canina ===
+                              true ? (
                               <AiOutlineCheckCircle size={50} color="#33b507" />
                             ) : (
                               <AiOutlineCloseCircle size={50} color="#a30f0f" />

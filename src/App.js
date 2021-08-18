@@ -11,8 +11,9 @@ import { ListaDepositos } from "./pages/ListaDepositos";
 import { DetalhesDeposito } from "./pages/DetalhesDeposito";
 import { Sobre } from "./pages/Sobre";
 import { Mapa } from "./pages/Mapa";
-import { PageNotFound } from './components/PageNotFound';
+import { DepositosInfo } from "./pages/DepositosInfo";
 
+import { PageNotFound } from './components/PageNotFound';
 import  PrivateRoute from './components/PrivateRoute';
 import  PublicRoute from './components/PublicRoute';
 
@@ -24,6 +25,7 @@ function App() {
         <Switch>          
           <PublicRoute path="/login" exact component={Login} /> 
           
+          <PrivateRoute path="/tabela" exact component={DepositosInfo} />    
           <PrivateRoute path="/sobre" exact component={Sobre} />           
           <PrivateRoute path="/" exact component={HomePage} /> 
           <PrivateRoute path="/mapa/depositos" exact component={Mapa} /> 

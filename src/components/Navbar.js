@@ -92,6 +92,13 @@ export function Navbar() {
                 </div>
 
                 <div className={styles.options}>
+
+                {/* <NavLink to="/tabela" className={styles.linkText} activeClassName={styles.activeLink}>
+                        <div className={styles.divLink}>
+                            <span>TABELA</span>
+                        </div>
+                    </NavLink> */}
+
                     <div className={styles.linkText} onClick={handleLogout}>
                         <span className={styles.divLink}>SAIR</span>
                         <IoLogOutOutline size={28} color="#fff" style={{'margin-left': '5px'}}/>

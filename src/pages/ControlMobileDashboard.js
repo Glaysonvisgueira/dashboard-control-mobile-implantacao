@@ -56,9 +56,9 @@ export function ControlMobileDashboard() {
                     <div className={styles.grid}>
                         {dashboards.map(deposito =>
                             <div className={styles.card}>
-                                <span className={styles.percentConclusion}>{deposito.controlmobile.dados_dashboard[0].value}%</span>
-                                <span className={styles.siglaDeposito}>{deposito.sigla_dep} - {deposito.cidade}</span>
-                                <PieChart width={200} height={200}>
+                                <span className={deposito.controlmobile.dados_dashboard[0].value != 0 ? styles.percentConclusion : styles.percentConclusionZero}>{deposito.controlmobile.dados_dashboard[0].value}%</span>
+                                <span className={styles.siglaDeposito}><strong>{deposito.sigla_dep}</strong> | {deposito.cidade} - {deposito.uf}</span>
+                                <PieChart width={160} height={160}>
                                     <Pie data={deposito.controlmobile.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} label={false} />
                                 </PieChart>
                             </div>
@@ -67,17 +67,16 @@ export function ControlMobileDashboard() {
 
                     <div className={styles.containerProgressBar}>
                         <div className={styles.textProgressBar}>
-                            <h2>Status de conclusão de implantação nos 12 depósitos:</h2>
-                            <h2 className={styles.statusPercent}>33%</h2>
+                            <h2>Status de conclusão de implantação nos 15 depósitos:</h2>
+                            <h2 className={styles.statusPercent}>26%</h2>
                         </div>
                         <div className={styles.progressBar}>
                             <div></div>
                         </div>
                     </div>
-
                 </div>
             </div>
-            <Footer />
+            <Footer />  
         </>
     )
 }
