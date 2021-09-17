@@ -12,11 +12,12 @@ import { DetalhesDeposito } from "./pages/DetalhesDeposito";
 import { Sobre } from "./pages/Sobre";
 import { Mapa } from "./pages/Mapa";
 import { DepositosInfo } from "./pages/DepositosInfo";
+import { SenhasBaseDeposito } from "./pages/SenhasBaseDeposito";
 
 import { PageNotFound } from './components/PageNotFound';
 import  PrivateRoute from './components/PrivateRoute';
 import  PublicRoute from './components/PublicRoute';
-
+ 
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
           <PrivateRoute path="/depositos/:sigla_dep" exact component={DetalhesDeposito} />         
           <PrivateRoute path="/dashboards" exact component={DashboardList} />
           <PrivateRoute path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />
-          <PrivateRoute path="/dashboards/geral" exact component={FaseDois} />  
+          <PrivateRoute path="/dashboards/geral" exact component={FaseDois} />
+          <PrivateRoute path="/senhas" exact component={SenhasBaseDeposito} />      
 
           <PublicRoute component={PageNotFound} />        
         </Switch>      
