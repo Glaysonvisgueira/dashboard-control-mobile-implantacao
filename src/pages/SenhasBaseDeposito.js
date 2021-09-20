@@ -7,16 +7,14 @@ import { MdContentCopy } from "react-icons/md";
 
 import styles from "../styles/pages/SenhasBaseDeposito.module.css";
 
-import { Navbar } from '../components/Navbar';
 import { Loading } from '../components/Loading';
-import { Footer } from '../components/Footer';
 
 export function SenhasBaseDeposito() {
 
     const [senhas, setSenhas] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const notify = () => toast("Senha do depósito copiada com sucesso!");
+    const notify = (e) => toast(`Senha do depósito: ${e} copiada com sucesso!`);
 
     useEffect(() => {
         async function loadSenhas() {
@@ -31,11 +29,9 @@ export function SenhasBaseDeposito() {
     if (loading && !senhas.length) {
         return (
             <>
-               
                 <div className={styles.containerPage}>
                     <Loading />
                 </div>
-                
             </>
         )
     }
@@ -44,21 +40,15 @@ export function SenhasBaseDeposito() {
         navigator.clipboard.writeText(senha)
     }
 
-
-
     return (
-
-
-
         <>
-            
             <div className={styles.containerPage}>
                 <h1>Senhas de acesso aos depósitos</h1>
                 <div className={styles.containerSenhas}>
                     {senhas.map(item =>
 
                         <div className={styles.senhaRow}>
-                            <div className={styles.depositoName} onClick={notify}>
+                            <div className={styles.depositoName}>
                                 <Toaster toastOptions={{
                                     className: '',
                                     style: {
@@ -74,19 +64,13 @@ export function SenhasBaseDeposito() {
                             <div>
                                 <span className={styles.senha}>{item.senha}</span>
                             </div>
-
-                            <div className={styles.copyClipboard} onClick={() => { navigator.clipboard.writeText(item.senha); notify() }} >
+                            <div className={styles.copyClipboard} onClick={() => { navigator.clipboard.writeText(item.senha); notify(item.sigla_dep) }} >
                                 <MdContentCopy size={24} color="#fff" />
                             </div>
                         </div>
                     )}
                 </div>
-
-
-
-
             </div>
-           
         </>
     )
 }
