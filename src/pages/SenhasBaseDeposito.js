@@ -14,7 +14,7 @@ export function SenhasBaseDeposito() {
     const [senhas, setSenhas] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const notify = (e) => toast(`Senha do depósito: ${e} copiada com sucesso!`);
+    const notify = (deposito) => toast.success(`${deposito} copiada com sucesso!`);
 
     useEffect(() => {
         async function loadSenhas() {
@@ -41,7 +41,17 @@ export function SenhasBaseDeposito() {
     }
 
     return (
-        <>
+        <> 
+        <Toaster toastOptions={{
+            className: '',
+            style: {
+                border: '2px solid #0bb016',
+                padding: '16px',
+                color: '#000',
+                fontWeight: 'bold'
+            },
+        }}
+        />
             <div className={styles.containerPage}>
                 <h1>Senhas de acesso aos depósitos</h1>
                 <div className={styles.containerSenhas}>
