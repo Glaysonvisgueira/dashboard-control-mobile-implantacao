@@ -16,11 +16,11 @@ export function SenhasBaseDeposito() {
     const [senhas, setSenhas] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const notify = () => toast('Here is your toast.');
+    const notify = () => toast("Senha do depósito copiada com sucesso!");
 
     useEffect(() => {
         async function loadSenhas() {
-            const response = await api.get('/senhas')
+            const response = await api.get('/senhas/glayson')
             setSenhas(response.data);
             setLoading(false);
         };
@@ -31,11 +31,11 @@ export function SenhasBaseDeposito() {
     if (loading && !senhas.length) {
         return (
             <>
-                <Navbar />
+               
                 <div className={styles.containerPage}>
                     <Loading />
                 </div>
-                <Footer />
+                
             </>
         )
     }
@@ -51,7 +51,7 @@ export function SenhasBaseDeposito() {
 
 
         <>
-            <Navbar />
+            
             <div className={styles.containerPage}>
                 <h1>Senhas de acesso aos depósitos</h1>
                 <div className={styles.containerSenhas}>
@@ -59,14 +59,23 @@ export function SenhasBaseDeposito() {
 
                         <div className={styles.senhaRow}>
                             <div className={styles.depositoName} onClick={notify}>
-                            <Toaster />
+                                <Toaster toastOptions={{
+                                    className: '',
+                                    style: {
+                                        border: '2px solid #0bb016',
+                                        padding: '16px',
+                                        color: '#000',
+                                        fontWeight: 'bold'
+                                    },
+                                }}
+                                />
                                 <span className={styles.dep}>{item.sigla_dep}</span>
                             </div>
                             <div>
                                 <span className={styles.senha}>{item.senha}</span>
                             </div>
 
-                            <div className={styles.copyClipboard} onClick={() => {navigator.clipboard.writeText(item.senha); notify() }} >
+                            <div className={styles.copyClipboard} onClick={() => { navigator.clipboard.writeText(item.senha); notify() }} >
                                 <MdContentCopy size={24} color="#fff" />
                             </div>
                         </div>
@@ -77,7 +86,7 @@ export function SenhasBaseDeposito() {
 
 
             </div>
-            <Footer />
+           
         </>
     )
 }

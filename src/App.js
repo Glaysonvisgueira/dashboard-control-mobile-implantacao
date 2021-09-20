@@ -35,7 +35,7 @@ function App() {
           <PrivateRoute path="/dashboards" exact component={DashboardList} />
           <PrivateRoute path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />
           <PrivateRoute path="/dashboards/geral" exact component={FaseDois} />
-          <PrivateRoute path="/senhas" exact component={SenhasBaseDeposito} />      
+          <PrivateRoute path="/senhas/glayson" exact component={SenhasBaseDeposito} />      
 
           <PublicRoute component={PageNotFound} />        
         </Switch>      
