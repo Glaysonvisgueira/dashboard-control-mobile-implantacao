@@ -13,6 +13,8 @@ import { Sobre } from "./pages/Sobre";
 import { Mapa } from "./pages/Mapa";
 import { DepositosInfo } from "./pages/DepositosInfo";
 import { SenhasBaseDeposito } from "./pages/SenhasBaseDeposito";
+import { DashboardGprotmin } from "./pages/DashboardGprotmin";
+import { DashboardGpermuta } from "./pages/DashboardGpermuta";
 
 import { PageNotFound } from './components/PageNotFound';
 import  PrivateRoute from './components/PrivateRoute';
@@ -26,6 +28,7 @@ function App() {
         <Switch>          
           <PublicRoute path="/login" exact component={Login} /> 
           
+
           <PrivateRoute path="/tabela" exact component={DepositosInfo} />    
           <PrivateRoute path="/sobre" exact component={Sobre} />           
           <PrivateRoute path="/" exact component={HomePage} /> 
@@ -34,6 +37,8 @@ function App() {
           <PrivateRoute path="/depositos/:sigla_dep" exact component={DetalhesDeposito} />         
           <PrivateRoute path="/dashboards" exact component={DashboardList} />
           <PrivateRoute path="/dashboards/controlmobile" exact component={ControlMobileDashboard} />
+          <PrivateRoute path="/dashboards/gprotmin" exact component={DashboardGprotmin} />
+          <PrivateRoute path="/dashboards/gpermuta" exact component={DashboardGpermuta} />
           <PrivateRoute path="/dashboards/geral" exact component={FaseDois} />
           <PrivateRoute path="/senhas/glayson" exact component={SenhasBaseDeposito} />      
 

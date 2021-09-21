@@ -3,13 +3,13 @@ import { PieChart, Pie } from 'recharts';
 
 import api from '../services/api.js'
 
-import styles from "../styles/pages/FaseDois.module.css";
+import styles from "../styles/pages/DashboardGprotmin.module.css";
 
 import { Navbar } from '../components/Navbar';
 import { Loading } from '../components/Loading';
 import { Footer } from '../components/Footer';
 
-export function FaseDois() {
+export function DashboardGprotmin() {
 
     const [dashboards, setDashboards] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ export function FaseDois() {
                 <div className={styles.containerDashboard}>
 
                     <div>
-                        <h1 className={styles.title}><span className={styles.dashboard}>DASHBOARD</span>&nbsp;Implantação/reciclagem das atividades da FASE 02</h1>
+                        <span className={styles.title}><span className={styles.dashboard}>DASHBOARD</span>&nbsp;Implantação/reciclagem do protocolo digital de minutas: GPROTMIN</span>
                         <div className={styles.legendas}>
                             <div className={styles.greenColor}></div>
                             <span>&nbsp;Concluído</span>
@@ -65,7 +65,7 @@ export function FaseDois() {
 
                     <div className={styles.containerProgressBar}>
                         <div className={styles.textProgressBar}>
-                            <h2>Status de conclusão da fase dois nos 24 depósitos:</h2>
+                            <h2>Status atual de implantação/reciclagem nos 24 depósitos:</h2>
                             <h2 className={styles.statusPercent}>0%</h2>
                         </div>
                         <div className={styles.progressBar}>

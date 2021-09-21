@@ -39,6 +39,20 @@ export function DashboardList(){
                                                    
                         </div>
                     </Link>
+
+                    <Link to="/dashboards/gprotmin" className={styles.divLink}>
+                        <div className={styles.card}>
+                            <span>Gprotmin</span>
+                                                   
+                        </div>
+                    </Link>
+
+                    <Link to="/dashboards/gpermuta" className={styles.divLink}>
+                        <div className={styles.card}>
+                            <span>Ficha de<br />permuta</span>
+                                                   
+                        </div>
+                    </Link>
                         
                     </div>
                               
