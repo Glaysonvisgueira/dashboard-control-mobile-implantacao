@@ -16,7 +16,7 @@ export function DashboardGpermuta() {
 
     useEffect(() => {
         async function loadDashboards() {
-            const response = await api.get('/dashboards/fasedois')
+            const response = await api.get('/dashboards/gpermuta')
             setDashboards(response.data);
             setLoading(false);
             console.log(response.data)
@@ -54,10 +54,10 @@ export function DashboardGpermuta() {
                     <div className={styles.grid}>
                         {dashboards.map(deposito => 
                                 <div className={styles.card}>
-                                    <span className={deposito.dados_dashboard[0] === 0 ? styles.percentConclusion : styles.percentConclusionZero}>{deposito.dados_dashboard[0].value}%</span>
+                                    <span className={deposito.gpermuta.dados_dashboard[0] === 0 ? styles.percentConclusion : styles.percentConclusionZero}>{deposito.gpermuta.dados_dashboard[0].value}%</span>
                                     <span className={styles.siglaDeposito}><strong>{deposito.sigla_dep}</strong> | {deposito.cidade} - {deposito.uf}</span>
                                     <PieChart width={100} height={100}>
-                                        <Pie data={deposito.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={38} outerRadius={45} label={false} />
+                                        <Pie data={deposito.gpermuta.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={38} outerRadius={45} label={false} />
                                     </PieChart>
                                 </div>
                         )}
