@@ -25,7 +25,7 @@ export function DashboardGprotmin() {
 
     }, []);
 
-    if(loading){
+    if (loading) {
         return (
             <>
                 <Navbar />
@@ -34,11 +34,12 @@ export function DashboardGprotmin() {
             </>
         )
     }
-    
+
     return (
         <>
             <Navbar />
             <div className={styles.containerPage}>
+
                 <div className={styles.containerDashboard}>
 
                     <div>
@@ -52,18 +53,20 @@ export function DashboardGprotmin() {
                     </div>
 
                     <div className={styles.grid}>
-                        {dashboards.map(deposito => 
-                                <div className={styles.card}>
-                                    <span className={deposito.gprotmin.dados_dashboard[0] === 0 ? styles.percentConclusion : styles.percentConclusionZero}>{deposito.gprotmin.dados_dashboard[0].value}%</span>
-                                    <span className={styles.siglaDeposito}><strong>{deposito.sigla_dep}</strong> | {deposito.cidade} - {deposito.uf}</span>
-                                    <PieChart width={100} height={100}>
-                                        <Pie data={deposito.gprotmin.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={38} outerRadius={45} label={false} />
-                                    </PieChart>
-                                </div>
+                        {dashboards.map(deposito =>
+                            <div className={styles.card}>
+                                {deposito.gprotmin.tipo === null ? <span></span> : <span className={deposito.gprotmin.tipo === 'RECICLAGEM' ? styles.textoTipoReciclagem : styles.textoTipoImplantacao}>{deposito.gprotmin.tipo}</span>}
+                                <span className={deposito.gprotmin.dados_dashboard[0].value != 0 ? styles.percentConclusion : styles.percentConclusionZero}>{deposito.gprotmin.dados_dashboard[0].value}%</span>
+                                <span className={styles.siglaDeposito}><strong>{deposito.sigla_dep}</strong> | {deposito.cidade} - {deposito.uf}</span>
+                                <PieChart width={100} height={100}>
+                                    <Pie data={deposito.gprotmin.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={38} outerRadius={45} label={false} />
+                                </PieChart>
+                            </div>
                         )}
+                       
                     </div>
-
-                    <div className={styles.containerProgressBar}>
+                    
+                    <div className={styles.containerProgressBar}>                    
                         <div className={styles.textProgressBar}>
                             <h2>Status atual de implantação/reciclagem nos 24 depósitos:</h2>
                             <h2 className={styles.statusPercent}>0%</h2>

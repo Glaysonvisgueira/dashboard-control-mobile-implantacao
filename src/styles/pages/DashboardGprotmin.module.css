@@ -152,4 +152,27 @@
       margin-top: 8px;
       z-index: 2;
   }
+
+  .textoTipoImplantacao{
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 9px;
+      color: #bf2c2c;
+      border: 1px solid #bf2c2c;
+      border-radius:14px;
+      padding: 0px 4px;
+  }
+
+  .textoTipoReciclagem{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 9px;
+    color: #009405;
+    border: 1px solid #009405;
+    border-radius:14px;
+    padding: 0px 4px;
+}
+
   
