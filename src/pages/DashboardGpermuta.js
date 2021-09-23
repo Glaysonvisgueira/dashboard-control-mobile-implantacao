@@ -25,7 +25,7 @@ export function DashboardGpermuta() {
 
     }, []);
 
-    if(loading){
+    if (loading) {
         return (
             <>
                 <Navbar />
@@ -34,11 +34,12 @@ export function DashboardGpermuta() {
             </>
         )
     }
-    
+
     return (
         <>
             <Navbar />
             <div className={styles.containerPage}>
+
                 <div className={styles.containerDashboard}>
 
                     <div>
@@ -52,18 +53,20 @@ export function DashboardGpermuta() {
                     </div>
 
                     <div className={styles.grid}>
-                        {dashboards.map(deposito => 
-                                <div className={styles.card}>
-                                    <span className={deposito.gpermuta.dados_dashboard[0] === 0 ? styles.percentConclusion : styles.percentConclusionZero}>{deposito.gpermuta.dados_dashboard[0].value}%</span>
-                                    <span className={styles.siglaDeposito}><strong>{deposito.sigla_dep}</strong> | {deposito.cidade} - {deposito.uf}</span>
-                                    <PieChart width={100} height={100}>
-                                        <Pie data={deposito.gpermuta.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={38} outerRadius={45} label={false} />
-                                    </PieChart>
-                                </div>
+                        {dashboards.map(deposito =>
+                            <div className={styles.card}>
+                                {deposito.gpermuta.tipo === null ? <span></span> : <span className={deposito.gpermuta.tipo === 'RECICLAGEM' ? styles.textoTipoReciclagem : styles.textoTipoImplantacao}>{deposito.gpermuta.tipo}</span>}
+                                <span className={deposito.gpermuta.dados_dashboard[0].value != 0 ? styles.percentConclusion : styles.percentConclusionZero}>{deposito.gpermuta.dados_dashboard[0].value}%</span>
+                                <span className={styles.siglaDeposito}><strong>{deposito.sigla_dep}</strong> | {deposito.cidade} - {deposito.uf}</span>
+                                <PieChart width={100} height={100}>
+                                    <Pie data={deposito.gpermuta.dados_dashboard} startAngle={90} endAngle={-360} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={38} outerRadius={45} label={false} />
+                                </PieChart>
+                            </div>
                         )}
+                       
                     </div>
-
-                    <div className={styles.containerProgressBar}>
+                    
+                    <div className={styles.containerProgressBar}>                    
                         <div className={styles.textProgressBar}>
                             <h2>Status atual de implantação/reciclagem nos 24 depósitos:</h2>
                             <h2 className={styles.statusPercent}>0%</h2>
