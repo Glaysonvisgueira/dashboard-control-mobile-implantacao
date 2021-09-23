@@ -30,29 +30,33 @@ export function SenhasBaseDeposito() {
     }
 
     async function copyToClipboard(text) {
-       await navigator.clipboard.writeText(text)
-        //() => { navigator.clipboard.writeText(item.senha)
-      }
+        if ('clipboard' in navigator) {
+            return await navigator.clipboard.writeText(text);
+        } else {
+            return document.execCommand('copy', true, text);
+        }
+        //() => { navigator.clipboard.writeText(item.senha)   
+     }
 
-    return (       
-            <div className={styles.containerPage}>
-                <h1>Senhas de acesso aos depósitos</h1>
-                <div className={styles.containerSenhas}>
-                    {senhas.map(item =>
-                        <div className={styles.senhaRow}>
-                            <div className={styles.depositoName}>                               
-                                <span className={styles.dep}>{item.sigla_dep}</span>
-                            </div>
-                            <div>
-                                <span className={styles.senha}>{item.senha}</span>
-                            </div>
-                            <div className={styles.copyClipboard} onClick={() => { copyToClipboard(item.senha)}} >
-                                <MdContentCopy size={24} color="#fff" />
-                            </div>
+    return (
+        <div className={styles.containerPage}>
+            <h1>Senhas de acesso aos depósitos</h1>
+            <div className={styles.containerSenhas}>
+                {senhas.map(item =>
+                    <div className={styles.senhaRow}>
+                        <div className={styles.depositoName}>
+                            <span className={styles.dep}>{item.sigla_dep}</span>
                         </div>
-                    )}
-                </div>
-            </div>        
+                        <div>
+                            <span className={styles.senha}>{item.senha}</span>
+                        </div>
+                        <div className={styles.copyClipboard} onClick={() => { copyToClipboard(item.senha) }} >
+                            <MdContentCopy size={24} color="#fff" />
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
     )
 }
 
