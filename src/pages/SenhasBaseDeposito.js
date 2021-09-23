@@ -29,6 +29,11 @@ export function SenhasBaseDeposito() {
         )
     }
 
+    async function copyToClipboard(text) {
+       await navigator.clipboard.writeText(text)
+        //() => { navigator.clipboard.writeText(item.senha)
+      }
+
     return (       
             <div className={styles.containerPage}>
                 <h1>Senhas de acesso aos depósitos</h1>
@@ -41,7 +46,7 @@ export function SenhasBaseDeposito() {
                             <div>
                                 <span className={styles.senha}>{item.senha}</span>
                             </div>
-                            <div className={styles.copyClipboard} onClick={() => { navigator.clipboard.writeText(item.senha)}} >
+                            <div className={styles.copyClipboard} onClick={() => { copyToClipboard(item.senha)}} >
                                 <MdContentCopy size={24} color="#fff" />
                             </div>
                         </div>
