@@ -43,7 +43,7 @@ export function DashboardGpermuta() {
                 <div className={styles.containerDashboard}>
 
                     <div>
-                        <span className={styles.title}><span className={styles.dashboard}>DASHBOARD</span>&nbsp;Implantação/reciclagem da ficha de permuta</span>
+                        <span className={styles.title}><span className={styles.dashboard}>DASHBOARD</span>&nbsp;Implantação/reciclagem da ficha de permuta e tratativas de cancelamento</span>
                         <div className={styles.legendas}>
                             <div className={styles.greenColor}></div>
                             <span>&nbsp;Concluído</span>
@@ -69,7 +69,7 @@ export function DashboardGpermuta() {
                     <div className={styles.containerProgressBar}>                    
                         <div className={styles.textProgressBar}>
                             <h2>Status atual de implantação/reciclagem nos 24 depósitos:</h2>
-                            <h2 className={styles.statusPercent}>0%</h2>
+                            <h2 className={styles.statusPercent}>87%</h2>
                         </div>
                         <div className={styles.progressBar}>
                             <div></div>
