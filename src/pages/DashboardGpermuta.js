@@ -67,9 +67,9 @@ export function DashboardGpermuta() {
                     </div>
                     
                     <div className={styles.containerProgressBar}>                    
-                        <div className={styles.textProgressBar}>
+                        <div className={styles.textProgressBar}>    
                             <h2>Status atual de implantação/reciclagem nos 24 depósitos:</h2>
-                            <h2 className={styles.statusPercent}>83%</h2>
+                            <h2 className={styles.statusPercent}>100%</h2>
                         </div>
                         <div className={styles.progressBar}>
                             <div></div>

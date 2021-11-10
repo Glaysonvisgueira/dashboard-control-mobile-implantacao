@@ -68,7 +68,7 @@ export function ControlMobileDashboard() {
                     <div className={styles.containerProgressBar}>
                         <div className={styles.textProgressBar}>
                             <h2>Status de conclusão de implantação nos 19 depósitos:</h2>
-                            <h2 className={styles.statusPercent}>26%</h2>
+                            <h2 className={styles.statusPercent}>58%</h2>
                         </div>
                         <div className={styles.progressBar}>
                             <div></div>
